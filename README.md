@@ -30,25 +30,25 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belong_to :users
+- belong_to :products
 
 
 ## seller_buyerテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 
 
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belong_to :users
+- belong_to :products
 
 
 
@@ -62,8 +62,8 @@
 
 
 ### Association
-- belongs_to :users
-- belongs_to :products
+- belong_to :users
+- belong_to :products
 
 
 
@@ -73,7 +73,7 @@
 |body|text|
 
 ### Association
--  belongs_to :users
+-  belong_to :users
 
 
 ## cdedit_cardテーブル
@@ -83,7 +83,7 @@
 |JCB|string||
 
 ### Association
--  belongs_to :users
+-  belong_to :users
 
 
 ## productsテーブル
@@ -120,7 +120,7 @@
 
 
 ### Association
-- belongs_to :products
+- belong_to :products
 - has_many :categories_size
 
 
@@ -133,7 +133,7 @@
 
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 
 
@@ -150,7 +150,7 @@
 
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 
 
@@ -162,7 +162,7 @@
 |4 ~ 7 day||
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 
 ## conditionテーブル
@@ -175,7 +175,7 @@
 |scar|null: false|
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 
 ## prefecturesテーブル
@@ -191,7 +191,7 @@
 
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 
 ## photosテーブル
@@ -202,7 +202,7 @@
 |url|null: false|
 
 ### Association
-- belongs_to :products
+- belong_to :products
 
 
 ## categorie_sizeテーブル
@@ -213,7 +213,7 @@
 
 
 ### Association
-- belongs_to :categories, through: :size
+- belong_to :categories, through: :size
 
 
 
