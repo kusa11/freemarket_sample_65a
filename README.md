@@ -4,14 +4,13 @@
 |Column|Type|Options|
 |------|----|-------|
 |family_name|string|null: false, index: true|
-|last_name|string|null: false, |
+|last_name|string|null: false|
 |family_name_Furigana|string|null: false|
 |last_name_Furigana|string|null: false|
 |nickname|string|null: false|
 |mail-address|string|null: false, unique: true|
 |password|string|null: false|
 |birthday|string|null: false|
-|address|string|null: false|
 |description||null: false|
 |comment|string|null: false|
 
@@ -24,6 +23,7 @@
 - has_many :comments, through: :products dependent: :destroy
 - has_many :seller_buyer, through: :products dependent: :destroy
 - has_many :likes, through: :products dependent: :destroy
+- has_many :street_address: :dependent: :destroy
 
 
 ## commentsテーブル
@@ -35,8 +35,8 @@
 
 
 ### Association
-- belong_to :users
-- belong_to :products
+- belong_to :user
+- belong_to :product
 
 
 ## seller_buyerテーブル
@@ -47,8 +47,8 @@
 
 
 ### Association
-- belong_to :users
-- belong_to :products
+- belong_to :user
+- belong_to :product
 
 
 
@@ -62,9 +62,22 @@
 
 
 ### Association
-- belong_to :users
-- belong_to :products
+- belong_to :user
+- belong_to :product
 
+
+## street_adressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal_code|integer|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|adress|string|null: false|
+|build|string|null: false|
+
+
+### Association
+-  belong_to :user
 
 
 ## todoテーブル
@@ -72,18 +85,19 @@
 |------|----|-------|
 |body|text|
 
+
 ### Association
--  belong_to :users
+-  belong_to :user
 
 
 ## cdedit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|VISA|string||
-|JCB|string||
+
+※ pay.jpを使って記述
 
 ### Association
--  belong_to :users
+-  belong_to :user
 
 
 ## productsテーブル
@@ -111,17 +125,16 @@
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|mens|string|null: false, index: true|
-|ladies|string|null: false, |
-|kids|string|null: false|
-|interior|null: false|
+|name|string|null: false|
+|ancestry|string|null: false|
+
 
 ※ancestryを使って記述
 
 
 ### Association
-- belong_to :products
-- has_many :categories_size
+- has_many :products
+- has_many :categories_size, through: size
 
 
 
@@ -133,7 +146,7 @@
 
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 
 
@@ -150,19 +163,18 @@
 
 
 ### Association
-- belong_to :products
+- has_many :products
 
 
 
 ## shoping_periedテーブル
 |Column|Type|Options|
 |------|----|-------|
-|1 ~ 2 day||
-|2 ~ 3 day||
-|4 ~ 7 day||
+|period|null: false|
+
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 
 ## conditionテーブル
@@ -175,7 +187,7 @@
 |scar|null: false|
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 
 ## prefecturesテーブル
@@ -191,7 +203,7 @@
 
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 
 ## photosテーブル
@@ -202,7 +214,7 @@
 |url|null: false|
 
 ### Association
-- belong_to :products
+- belong_to :product
 
 
 ## categorie_sizeテーブル
@@ -213,18 +225,16 @@
 
 
 ### Association
-- belong_to :categories, through: :size
+- belong_to :categories
+- beling_to :size
 
 
 
 ## sizeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|S|null: false||
-|M|null: false||
-|L|null: false||
-|25cm|null: false||
-|27cm|null: false||
+|kind|null: false||
 
 
 ### Association
+- has_many :categorie_size, through: :categories
