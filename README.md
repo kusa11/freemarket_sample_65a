@@ -31,8 +31,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |comment|references|null: false, foreign_key: true|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -44,8 +44,8 @@
 ## seller_buyerテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -57,8 +57,8 @@
 ### likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 
 ※deviceを使用します
 
@@ -72,7 +72,7 @@
 ## street_adressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -89,7 +89,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|user_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -100,7 +100,7 @@
 ## cdedit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 |card_id|integer|null: false|
 
 ※ pay.jpを使って記述
@@ -122,9 +122,9 @@
 |user_id|references|null: false, foreign_key: true|
 |shipping_peried_id|references|null: false, foreign_key: true|
 |condetion_id|references|null: false, foreign_key: true|
-|deribery_chage_id|integer|null: false|
-|brand_id|integer|null: fanlse|
-|shopping_period_id|integer|null: false|
+|deribery_chage_id|references|null: false, foreign_key: true|
+|brand_id|references|null: false, foreign_key: true|
+|shopping_period_id|references|null: false, foreign_key: true|
 
 
 
@@ -161,12 +161,12 @@
 ## derivery_chageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|postage_included|null: false|
-|cash_on_delivery|null: false|
+|Postage_included|string|null: false|
+|cash_on_delivery|string|null: false|
 
 
 ### Association
-- belongs_to :product
+- has_many :products
 
 
 
@@ -199,7 +199,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |text|string|null: false|
-|product_id|integer|null: false|
+|product_id|references|null: false, foreign_key: true|
 
 
 
