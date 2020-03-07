@@ -30,7 +30,7 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|references|null: false, foreign_key: true|
+|comment|text|null: false|
 |user|references|null: false, foreign_key: true|
 |product|references|null: false, foreign_key: true|
 
@@ -72,7 +72,7 @@
 ## street_adressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -89,7 +89,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 
 ### Association
@@ -100,7 +100,7 @@
 ## cdedit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 |card_id|integer|null: false|
 
 ※ pay.jpを使って記述
@@ -119,13 +119,12 @@
 |title|null: false|
 |description|string|null: false|
 |name|string|null: false|
-|user_id|references|null: false, foreign_key: true|
-|shipping_peried_id|references|null: false, foreign_key: true|
-|condetion_id|references|null: false, foreign_key: true|
-|deribery_chage_id|references|null: false, foreign_key: true|
-|brand_id|references|null: false, foreign_key: true|
-|shopping_period_id|references|null: false, foreign_key: true|
-
+|user|references|null: false, foreign_key: true|
+|shipping_peried|references|null: false, foreign_key: true|
+|condetion|references|null: false, foreign_key: true|
+|deribery_chage|references|null: false, foreign_key: true|
+|brand|references|null: false, foreign_key: true|
+|shopping_period|references|null: false, foreign_key: true|
 
 
 
@@ -154,14 +153,13 @@
 
 ### Association
 - has_many :products
-- has_many :categories_size, through: size
 
 
 
 ## derivery_chageテーブル
 |Column|Type|Options|
 |------|----|-------|
-|Postage_included|string|null: false|
+|postage_included|string|null: false|
 |cash_on_delivery|string|null: false|
 
 
@@ -187,7 +185,7 @@
 ## shipping_periedテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
+|piriod|string|null: false|
 
 
 ### Association
@@ -199,7 +197,7 @@
 |------|----|-------|
 |id|integer|null: false|
 |text|string|null: false|
-|product_id|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 
 
 
@@ -212,7 +210,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|product_id||references|null: false, foreign_key: true|
+|product||references|null: false, foreign_key: true|
 |url|string|null: false|
 
 ### Association
