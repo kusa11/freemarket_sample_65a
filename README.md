@@ -122,7 +122,7 @@
 |user|references|null: false, foreign_key: true|
 |shipping_peried|references|null: false, foreign_key: true|
 |condetion|references|null: false, foreign_key: true|
-|deribery_chage|references|null: false, foreign_key: true|
+|delibery_chage|references|null: false, foreign_key: true|
 |brand|references|null: false, foreign_key: true|
 |shopping_period|references|null: false, foreign_key: true|
 
@@ -186,6 +186,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |piriod|string|null: false|
+|product|references|foreign_key: true|
 
 
 ### Association
