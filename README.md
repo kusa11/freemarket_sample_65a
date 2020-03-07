@@ -83,7 +83,8 @@
 ## todoテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|
+|body|text|null: false|
+|user_id|null: false|
 
 
 ### Association
@@ -109,12 +110,13 @@
 |title|null: false|
 |description|string|null: false|
 |name|string|null: false|
+|user_id|string|null: false|
 
 
 ### Association
 - has_many :categories
 - has_many :deribery_chage
-- has_many :brand
+- belong_to :brand
 - has_many :shopping_period
 - has_many :condition
 - has_many :prefectures dependent: :destroy
@@ -190,27 +192,12 @@
 - belong_to :product
 
 
-## prefecturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|null: false|
-|北海道||
-|青森||
-|岩手||
-
-
-※active_hashを使用します
-
-
-### Association
-- belong_to :product
-
 
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|null: false|
-|item_id|null: false|
+|product_id|null: false|
 |url|null: false|
 
 ### Association
