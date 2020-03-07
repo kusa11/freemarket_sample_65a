@@ -30,48 +30,49 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|comment|string|null: false|
-|user|references|null: false, foreign_key: true|
-|product|references|null: false, foreign_key: true|
+|comment|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 
 ### Association
-- belong_to :user
-- belong_to :product
+- belongs_to :user
+- belongs_to :product
 
 
 
 ## seller_buyerテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|product|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 
 ### Association
-- belong_to :user
-- belong_to :product
+- belongs_to :user
+- belongs_to :product
 
 
 
 ### likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|product_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|product_id|references|null: false, foreign_key: true|
 
 ※deviceを使用します
 
 
 ### Association
-- belong_to :user
-- belong_to :product
+- belongs_to :user
+- belongs_to :product
 
 
 
 ## street_adressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false|
 |postal_code|integer|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
@@ -80,7 +81,7 @@
 
 
 ### Association
--  belong_to :user
+-  belongs_to :user
 
 
 
@@ -92,7 +93,7 @@
 
 
 ### Association
--  belong_to :user
+-  belongs_to :user
 
 
 
@@ -100,11 +101,12 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false|
+|card_id|integer|null: false|
 
 ※ pay.jpを使って記述
 
 ### Association
--  belong_to :user
+-  belongs_to :user
 
 
 
@@ -120,15 +122,19 @@
 |user_id|references|null: false, foreign_key: true|
 |shipping_peried_id|references|null: false, foreign_key: true|
 |condetion_id|references|null: false, foreign_key: true|
+|deribery_chage_id|integer|null: false|
+|brand_id|integer|null: fanlse|
+|shopping_period_id|integer|null: false|
+
+
 
 
 ### Association
-- belong_to :categorie
-- belong_to :deribery_chage
-- belong_to :brand
+- belongs_to :category
+- belongs_to :deribery_chage
+- belongs_to :brand
 - belomg_to :shopping_period
-- belong_to :condition
-- belong_to :prefectures dependent: :destroy
+- belongs_to :condition
 - has_many :photos dependent: :destroy
 - has_many :likes, dependent: :destroy
 - has_many :seller_buyer, through: users dependent: :destroy
@@ -160,18 +166,15 @@
 
 
 ### Association
-- belong_to :product
+- belongs_to :product
 
 
 
 ## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|CHANEL|null: false|
-|NIKE|null: false|
-|LOUIS_VITTON|null: false|
-|Supreme|null: false|
-|adidas|null: false|
+|name|string|null: false|
+
 
 ※ancesatryを使用します
 
@@ -188,7 +191,7 @@
 
 
 ### Association
-- belong_to :product
+- belongs_to :product
 
 
 ## conditionテーブル
@@ -196,11 +199,12 @@
 |------|----|-------|
 |id|integer|null: false|
 |text|string|null: false|
+|product_id|integer|null: false|
 
 
 
 ### Association
-- belong_to :product
+- belongs_to :product
 
 
 
@@ -212,4 +216,4 @@
 |url|string|null: false|
 
 ### Association
-- belong_to :product
+- belongs_to :product
