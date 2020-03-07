@@ -213,26 +213,3 @@
 
 ### Association
 - belong_to :product
-
-
-## categorie_sizeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|references|null: false, foreign_key: true|
-|product|references|null: false, foreign_key: true|
-
-
-### Association
-- belong_to :categories
-- beling_to :size
-
-
-
-## sizeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|kind||string|null: false||
-
-
-### Association
-- has_many :categorie_size, through: :categories
