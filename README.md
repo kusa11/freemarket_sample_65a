@@ -26,6 +26,7 @@
 - has_many :street_address: :dependent: :destroy
 
 
+
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -37,6 +38,7 @@
 ### Association
 - belong_to :user
 - belong_to :product
+
 
 
 ## seller_buyerテーブル
@@ -55,8 +57,8 @@
 ### likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|null: false, foreign_key: true|
-|product_id|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
 
 ※deviceを使用します
 
@@ -64,6 +66,7 @@
 ### Association
 - belong_to :user
 - belong_to :product
+
 
 
 ## street_adressテーブル
@@ -80,25 +83,29 @@
 -  belong_to :user
 
 
+
 ## todoテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|user_id|null: false|
+|user_id|integer|null: false|
 
 
 ### Association
 -  belong_to :user
+
 
 
 ## cdedit_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false|
 
 ※ pay.jpを使って記述
 
 ### Association
 -  belong_to :user
+
 
 
 ## productsテーブル
@@ -110,18 +117,23 @@
 |title|null: false|
 |description|string|null: false|
 |name|string|null: false|
-|user_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|shipping_peried_id|references|null: false, foreign_key: true|
+|condetion_id|references|null: false, foreign_key: true|
 
 
 ### Association
-- has_many :categories
-- has_many :deribery_chage
+- belong_to :categorie
+- belong_to :deribery_chage
 - belong_to :brand
-- has_many :shopping_period
-- has_many :condition
-- has_many :prefectures dependent: :destroy
+- belomg_to :shopping_period
+- belong_to :condition
+- belong_to :prefectures dependent: :destroy
 - has_many :photos dependent: :destroy
-- has_many :likes, through: :users dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :seller_buyer, through: users dependent: :destroy
+- has_many :comments, through: :users dependent: :destroy
+
 
 
 ## categoriesテーブル
@@ -169,10 +181,10 @@
 
 
 
-## shoping_periedテーブル
+## shipping_periedテーブル
 |Column|Type|Options|
 |------|----|-------|
-|period|null: false|
+|id|integer|null: false|
 
 
 ### Association
@@ -182,11 +194,10 @@
 ## conditionテーブル
 |Column|Type|Options|
 |------|----|-------|
-|brand_new|null: false|
-|unused|null:false|
-|no_scratches|null: false|
-|A_little_scratch|null: false|
-|scar|null: false|
+|id|integer|null: false|
+|text|string|null: false|
+
+
 
 ### Association
 - belong_to :product
@@ -196,9 +207,9 @@
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|null: false|
-|product_id|null: false|
-|url|null: false|
+|id|integer|null: false|
+|product_id||references|null: false, foreign_key: true|
+|url|string|null: false|
 
 ### Association
 - belong_to :product
@@ -220,7 +231,7 @@
 ## sizeテーブル
 |Column|Type|Options|
 |------|----|-------|
-|kind|null: false||
+|kind||string|null: false||
 
 
 ### Association
