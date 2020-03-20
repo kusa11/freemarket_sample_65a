@@ -1,0 +1,13 @@
+.login_header {
+    background-color: rgb(245, 245, 245);
+    height: 128px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .logo {
+      height: 45px;
+      width: 185px;
+      cursor: pointer;
+    }
+  }

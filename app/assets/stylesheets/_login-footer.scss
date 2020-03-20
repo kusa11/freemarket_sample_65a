@@ -1,0 +1,30 @@
+.login-footer {
+  background-color: rgb(245, 245, 245);
+  height: 140px;
+  width: 100%;
+  padding: 40px 0px 41px;
+  margin-top: auto;
+  text-align: center;
+  ul {
+    list-style: none;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    margin: -16px 0px 40px -16px;
+    li {
+      margin: 16px 0px 0px 16px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+  .logo-white {
+    height: 45px;
+    margin-bottom: 8px;
+    width: 185px;
+    filter: invert(25%) sepia(0%) saturate(11%) hue-rotate(143deg) brightness(101%) contrast(93%);
+    cursor: pointer;
+  }
+  .Inc {
+    font-size: 12px;
+  }
+}
