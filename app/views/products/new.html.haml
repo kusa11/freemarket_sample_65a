@@ -2,7 +2,7 @@
   =render 'products/login-header'
 .sell-wrapper
   %form
-    .content
+    .upload-content
       .sell-input-name
         %label
           出品画像
@@ -19,7 +19,7 @@
             %br
               またはクリックしてファイルをアップロード
 
-    .content
+    .product-content
       .product-name
         .sell-input-name
           %label
@@ -36,7 +36,8 @@
         %textarea.product-description__text-box{name: "", type: "text", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
         .product-description__text-counter
           0/1000
-    .content
+
+    .details-content
       %h3
         商品の詳細
       .category-box
@@ -70,7 +71,7 @@
           %option{value: "選択肢3"} 選択肢3
 
 
-    .content
+    .delivery-content
       %h3
         配送について
       .burden-box

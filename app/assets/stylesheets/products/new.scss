@@ -10,117 +10,136 @@ body {
     background-color: #fff;
     width: 700px;
     margin: 0 auto;
-    .description {
-      font-size: 14px;
-      line-height: 1.4em;
-      margin-top: 16px;
-    }
-    .upload-box {
-      margin-top: 16px;
-      height: 150px;
-      &__sentence {
-        align-content: center;
-        -webkit-box-align: center;
-        align-items: center;
-        background-color: rgb(245, 245, 245);
-        cursor: pointer;
-        display: flex;
-        height: 100%;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        justify-content: center;
-        position: relative;
-        border-width: 1px;
-        border-style: dashed;
-        border-color: rgb(204, 204, 204);
-        border-image: initial;
-        transition: all 0.5s ease-out 0s;
-        &__photo-image {
-          filter: invert(100%) sepia(100%) saturate(6932%) hue-rotate(358deg) brightness(100%) contrast(112%);
-          height: 24px;
-          margin-bottom: 8px;
-          width: 24px;
+    .upload-content {
+      padding: 40px;
+      border-bottom: 2px solid rgb(245, 245, 245);
+      .description {
+        font-size: 14px;
+        line-height: 1.4em;
+        margin-top: 16px;
+      }
+      .upload-box {
+        margin-top: 16px;
+        height: 150px;
+        &__sentence {
+          align-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: rgb(245, 245, 245);
+          cursor: pointer;
+          display: flex;
+          height: 100%;
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          justify-content: center;
+          position: relative;
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          transition: all 0.5s ease-out 0s;
+          &__photo-image {
+            filter: invert(100%) sepia(100%) saturate(6932%) hue-rotate(358deg) brightness(100%) contrast(112%);
+            height: 24px;
+            margin-bottom: 8px;
+            width: 24px;
+          }
+          &__sentence-text {
+            font-size: 12px;
+            line-height: 1.4em;
+            width: 100%;
+            text-align: center;
+            margin-top: 0;
+          }
         }
-        &__sentence-text {
+      }
+    }
+    .product-content {
+      padding: 40px;
+      border-bottom: 2px solid rgb(245, 245, 245);
+      .product-name {
+        &__product-name-input {
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          height: 48px;
+          line-height: 1;
+          outline: none;
+          padding: 0 16px;
+          width: 100%;
+          margin-top: 16px;
+        }
+      }
+      .product-description {
+        margin-top: 32px;
+        &__text-box {
+          margin-top: 16px;
+          height: 154px;
+          width: 100%;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          outline: none;
+          padding: 13px 16px;
+        }
+        &__text-counter {
+          margin-top: 16px;
+          color: #888;
           font-size: 12px;
           line-height: 1.4em;
-          width: 100%;
-          text-align: center;
-          margin-top: 0;
+          text-align: right;
         }
+      }
+    }
+    
+    .details-content {
+      padding: 40px;
+      border-bottom: 2px solid rgb(245, 245, 245);
+      .category-box {
+        margin-top: 32px;
+      }
+      .brand-box {
+        margin-top: 32px;
+        &__brand-input-box {
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: #222;
+          font-size: 16px;
+          height: 48px;
+          line-height: 1;
+          outline: none;
+          padding: 0 16px;
+          width: 100%;
+          margin-top: 16px;
+        }
+      }
+      .condetion-box {
+        margin-top: 32px;
       }
     }
 
-    .product-name {
-      &__product-name-input {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        color: #222;
-        font-size: 16px;
-        height: 48px;
-        line-height: 1;
-        outline: none;
-        padding: 0 16px;
-        width: 100%;
-        margin-top: 16px;
+    .delivery-content {
+      padding: 40px;
+      border-bottom: 2px solid rgb(245, 245, 245);
+      .burden-box {
+        margin-top: 32px;
+      }
+      
+      .area-box {
+        margin-top: 32px;
+      }
+      .days-box {
+        margin-top: 32px;
       }
     }
-    .product-description {
-      margin-top: 32px;
-      &__text-box {
-        margin-top: 16px;
-        height: 154px;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        color: #222;
-        font-size: 16px;
-        outline: none;
-        padding: 13px 16px;
-      }
-      &__text-counter {
-        margin-top: 16px;
-        color: #888;
-        font-size: 12px;
-        line-height: 1.4em;
-        text-align: right;
-      }
-    }
-    .category-box {
-      margin-top: 32px;
-    }
-    .brand-box {
-      margin-top: 32px;
-      &__brand-input-box {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        color: #222;
-        font-size: 16px;
-        height: 48px;
-        line-height: 1;
-        outline: none;
-        padding: 0 16px;
-        width: 100%;
-        margin-top: 16px;
-      }
-    }
-    .condetion-box {
-      margin-top: 32px;
-    }
-    .burden-box {
-      margin-top: 32px;
-    }
-    .area-box {
-      margin-top: 32px;
-    }
-    .days-box {
-      margin-top: 32px;
-    }
+
     .content-bottom {
       padding: 40px 40px 65px 40px;
       .price-box {
@@ -229,17 +248,7 @@ body {
       line-height: 1.4em;
     }
 
-    .content {
-      padding: 40px;
-      border-bottom: 2px solid rgb(245, 245, 245);
-    }
-
-    .sell-input-name{
-      align-items: center;
-      display: flex;
-      width: 100%;
-    }
-
+    
     h3 {
       color: rgb(136, 136, 136);
       font-size: 14px;
@@ -249,31 +258,6 @@ body {
       margin-bottom: 24px;
     }
     
-    label {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.4em;
-      white-space: nowrap;
-    }
-
-    span {
-      margin-left: 8px;
-      font-size: 12px;
-      padding: 0 4px;
-      background-color: #ff0211;
-      color: #fff;
-      border-radius: 2px;
-      display: inline-block;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 1.4em;
-      white-space: nowrap;
-    }
-
-    span.any {
-      background-color: #bfbfbf;
-    }
-
     select {
       background-color: #fff;
       border: 1px solid #ccc;
@@ -287,6 +271,34 @@ body {
       padding: 0 56px 0 16px;
       width: 100%;
       margin-top: 16px;
+    }
+    
+    .sell-input-name{
+      align-items: center;
+      display: flex;
+      width: 100%;
+      label {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+        white-space: nowrap;
+      }
+      span {
+        margin-left: 8px;
+        font-size: 12px;
+        padding: 0 4px;
+        background-color: #ff0211;
+        color: #fff;
+        border-radius: 2px;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.4em;
+        white-space: nowrap;
+      }
+      span.any {
+        background-color: #bfbfbf;
+      }
     }
   }
 }
