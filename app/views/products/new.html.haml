@@ -13,7 +13,7 @@
       .upload-box
         .upload-box__sentence
           .upload-box__sentence__photo-image
-            %img.camera{:alt => "camera", :src => "/assets/icon/icon_camera.png", :height => "24", :viewbox => "0 0 24 24", :width => "24"}/
+            = image_tag "/assets/icon/icon_camera.png", alt: "camera", class: "camera", width: "24px"
           .upload-box__sentence__sentence-text
             ドラッグアンドドロップ
             %br
