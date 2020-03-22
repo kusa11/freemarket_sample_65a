@@ -67,3 +67,4 @@ gem 'fog-aws'
 
 gem 'haml-rails'
 gem 'devise'
+gem 'active_hash'
