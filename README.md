@@ -11,7 +11,7 @@
 |mail-address|string|null: false, unique: true|
 |password|string|null: false|
 |birthday|string|null: false|
-|description||null: false|
+|description|string|null: false|
 |comment|string|null: false|
 
 ※deviceを使って記述
@@ -116,7 +116,7 @@
 |status|string|null: false, index: true|
 |send_cost|string|null: false, |
 |address|string|null: false|
-|title|null: false|
+|title|null: false|null: false|
 |description|string|null: false|
 |name|string|null: false|
 |user|references|null: false, foreign_key: true|
@@ -211,7 +211,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false|
-|product||references|null: false, foreign_key: true|
+|product|string|references|null: false, foreign_key: true|
 |url|string|null: false|
 
 ### Association
