@@ -10,6 +10,9 @@
       =link_to "/signup/first" do
         新規会員登録
       .main__login__inner
+        =link_to "#", class: "main__login__inner__btn main__login__inner__btn--facebook" do
+          = icon('fab', 'facebook-square',class:'icon')
+          Facebookでログイン
       .main__logon__bottom
         .main__login__bottom__robot
         .main__login__bottom__login

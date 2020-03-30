@@ -22,8 +22,19 @@
       height: 800px;
       background-color: #ffffff;
       &__account {
-        border-bottom: solid;
+        border-bottom: solid 1px lightgray;
+        padding: 40px 65px;
+        text-align: center;
+        }
+      &__inner {
+        padding: 32px 64px;
       }
+      &__bottom {
+        background-color: red;
+        width:450px;
+        height: 465px;
+        padding: 24px 64px 32px;
+      }
+    } 
     }
   }
-}
