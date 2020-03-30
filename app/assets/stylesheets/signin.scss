@@ -12,4 +12,18 @@
       width: 200px;
     }
   }
+  .main {
+    background-color: #EEEEEE;
+    width: 100%;
+    height: 800px;
+    &__login {
+      margin: 0 auto;
+      width:450px;
+      height: 800px;
+      background-color: #ffffff;
+      &__account {
+        border-bottom: solid;
+      }
+    }
+  }
 }

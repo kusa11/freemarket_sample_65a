@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20200322083210) do
     t.string   "nickname",                            null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "birth_year",                          null: false
+    t.integer  "birth_year",                          null: false
     t.integer  "birth_month",                         null: false
     t.integer  "birth_day",                           null: false
     t.string   "first_name",                          null: false
