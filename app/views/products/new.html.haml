@@ -12,13 +12,14 @@
         .description
           最大10枚までアップロードできます
         .upload-box
-          .upload-box__sentence
+          %label.upload-box__sentence
             .upload-box__sentence__photo-image
               = icon('fa', 'camera')
             .upload-box__sentence__sentence-text
               ドラッグアンドドロップ
               %br
                 またはクリックしてファイルをアップロード
+              %input{type: "file"}
 
       .product-content
         .product-name
