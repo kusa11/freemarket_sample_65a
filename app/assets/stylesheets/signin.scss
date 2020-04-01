@@ -25,10 +25,60 @@
         border-bottom: solid 1px lightgray;
         padding: 40px 65px;
         text-align: center;
+        a{
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-decoration: none;
+        }
         }
       &__inner {
         padding: 32px 64px;
+        &__btn{
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          font-family: 'icon-font';
+          &--facebook{
+            background: #385185;
+            color: #fff;
+            display: inline-block;
+            position: relative;
+            .icon{
+              float: left;
+              font-size: 30px;
+              position: absolute;
+              left: 15px;
+              top: 10px;
+            }
+          }
+          &--google{
+            margin: 16px 0 0;
+            background: #fff ;
+            border: #979797 solid 1px;
+            color: #333;
+            display: inline-block;
+            position: relative;
+            .icon{
+              float: left;
+              font-size: 25px;
+              position: absolute;
+              left: 15px;
+              top: 10px;
+            }
+          }
       }
+    }
       &__bottom{
         background-color: #fff;
         padding: 24px 64px 32px;
@@ -51,6 +101,7 @@
           background: gray;
           margin: 24px 0 24px 0;
           padding: 10px 16px 8px;
+          border-radius: 4px;
     } 
         &__login{
           text-decoration: none;
