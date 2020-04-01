@@ -123,16 +123,23 @@
           margin-top: 16px;
         }
       }
+      .states-box {
+        margin-top: 32px;
+      }
     }
 
     .delivery-content {
       padding: 40px;
       border-bottom: 2px solid rgb(245, 245, 245);
-      .burden-box {
+      .delivery_fee-box {
         margin-top: 32px;
       }
       
-      .area-box {
+      .delivery_area-box {
+        margin-top: 32px;
+      }
+
+      .delivery_day-box {
         margin-top: 32px;
       }
     }
