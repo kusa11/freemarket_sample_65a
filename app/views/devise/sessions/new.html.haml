@@ -13,9 +13,20 @@
         =link_to "#", class: "main__login__inner__btn main__login__inner__btn--facebook" do
           = icon('fab', 'facebook-square',class:'icon')
           Facebookでログイン
+        =link_to "#", class: "main__login__inner__btn main__login__inner__btn--google" do
+          =icon('fab', 'google',class:'icon')
+          googleでログイン
       .main__logon__bottom
-        .main__login__bottom__robot
-        .main__login__bottom__login
-        .main__login__bottom__passwordforgot
+        = form_for '', url: "/users/sign_in" do |f|
+          = f.email_field :email, placeholder:'メールアドレス',class: 'main__login__bottom__form'
+          = f.password_field :password, placeholder:'パスワード',class: 'main__login__bottom__form'
+          .main__login__bottom__robot
+          □ 私はロボットではありません
+          .main__login__bottom__login
+            = f.submit "ログイン", class: "main__login__bottom__login"
+          .main__login__bottom__passwordforgot
+            = link_to "#", class: "main__login__bottom__passwordforgot" do
+              パスワードお忘れの方
 
   .footer
+    .footer__center
