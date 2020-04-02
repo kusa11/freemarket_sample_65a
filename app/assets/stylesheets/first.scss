@@ -1,0 +1,16 @@
+.main-signup {
+  height: 100vh;
+  background-color: #ffffff;
+  .header {
+    height: 15%;
+    width: 100%;
+    &__icon {
+      height: 30%;
+      width: 15%;
+      margin: 0 auto;
+      &__image {
+        margin: 30px auto;
+      }
+    }
+  }
+}
