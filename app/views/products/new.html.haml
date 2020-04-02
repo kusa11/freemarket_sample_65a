@@ -60,14 +60,14 @@
             %span.any
               任意
           %input.brand-box__brand-input-box{name: "", type: "text", placeholder: "例) シャネル"}
-        .states-box
+        .condition-box
           .area-box
             .sell-input-name
               %label
                 商品の状態
               %span
                 必須
-            = f.collection_select :states_id, States.all, :id, :name, prompt: "選択してください"
+            = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択してください"
 
       .delivery-content
         %h3
