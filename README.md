@@ -16,28 +16,13 @@
 
 ※deviceを使って記述
 
-
 ### Association
 - has_many :credit_card dependent: :destroy
 - has_many :todo_list dependent: :destroy
 - has_many :comments, through: :products dependent: :destroy
 - has_many :seller_buyer, through: :products dependent: :destroy
-- has_many :likes, through: :products dependent: :destroy
+- has_many :products dependent: :destroy
 - has_many :street_address: :dependent: :destroy
-
-
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|comment|text|null: false|
-|user|references|null: false, foreign_key: true|
-|product|references|null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :user
-- belongs_to :product
 
 
 
@@ -46,22 +31,6 @@
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |product|references|null: false, foreign_key: true|
-
-
-### Association
-- belongs_to :user
-- belongs_to :product
-
-
-
-### likesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false, foreign_key: true|
-|product|references|null: false, foreign_key: true|
-
-※deviceを使用します
-
 
 ### Association
 - belongs_to :user
@@ -79,7 +48,6 @@
 |adress|string|null: false|
 |build|string|null: false|
 
-
 ### Association
 -  belongs_to :user
 
@@ -91,9 +59,8 @@
 |body|text|null: false|
 |user|references|null: false, foreign_key: true|
 
-
 ### Association
--  belongs_to :user
+-  belongs_to
 
 
 
@@ -113,31 +80,20 @@
 ## productsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|status|string|null: false, index: true|
-|send_cost|string|null: false, |
-|address|string|null: false|
-|title|null: false|null: false|
-|description|string|null: false|
 |name|string|null: false|
+|description|text|null: false|
+|condition|integer|null: false|
+|delivery_fee|integer|null: false|
+|delivery_area|integer|null: false|
+|delivery_day|integer|null: false|
+|price|integer|null: false|
+|category|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
-|shipping_peried|references|null: false, foreign_key: true|
-|condetion|references|null: false, foreign_key: true|
-|delibery_chage|references|null: false, foreign_key: true|
-|brand|references|null: false, foreign_key: true|
-|shopping_period|references|null: false, foreign_key: true|
-
-
 
 ### Association
 - belongs_to :category
-- belongs_to :deribery_chage
-- belongs_to :brand
-- belomg_to :shopping_period
-- belongs_to :condition
+- belongs_to :user
 - has_many :photos dependent: :destroy
-- has_many :likes, dependent: :destroy
-- has_many :seller_buyer, through: users dependent: :destroy
-- has_many :comments, through: :users dependent: :destroy
 
 
 
@@ -147,72 +103,18 @@
 |name|string|null: false|
 |ancestry|string|null: false|
 
-
 ※ancestryを使って記述
 
-
 ### Association
 - has_many :products
-
-
-
-## derivery_chageテーブル
-|Column|Type|Options|
-|------|----|-------|
-|postage_included|string|null: false|
-|cash_on_delivery|string|null: false|
-
-
-### Association
-- has_many :products
-
-
-
-## brandテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-
-
-※ancesatryを使用します
-
-
-### Association
-- has_many :products
-
-
-
-## shipping_periedテーブル
-|Column|Type|Options|
-|------|----|-------|
-|piriod|string|null: false|
-|product|references|foreign_key: true|
-
-
-### Association
-- belongs_to :product
-
-
-## conditionテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|text|string|null: false|
-|product|references|null: false, foreign_key: true|
-
-
-
-### Association
-- belongs_to :product
 
 
 
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false|
-|product|string|references|null: false, foreign_key: true|
-|url|string|null: false|
+|image|string|null: false|
+|product|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :product
