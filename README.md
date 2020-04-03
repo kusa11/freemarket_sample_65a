@@ -93,7 +93,7 @@
 ### Association
 - belongs_to :category
 - belongs_to :user
-- has_many :photos dependent: :destroy
+- has_many :images dependent: :destroy
 
 
 
@@ -110,7 +110,7 @@
 
 
 
-## photosテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
