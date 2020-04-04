@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :signup do
     collection do
       get 'first'
+      get 'second'
 
     end
   end
