@@ -3,6 +3,10 @@ class SignupController < ApplicationController
   end
 
   def second
+    @user = User.new
   end
   
+  def third
+  end
+
 end

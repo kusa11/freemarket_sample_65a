@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'first'
       get 'second'
+      get 'third'
 
     end
   end
