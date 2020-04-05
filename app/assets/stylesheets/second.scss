@@ -1,0 +1,17 @@
+.body-register {
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  background-color: rgb(245, 245, 245);
+  height: 1500px;  
+  .header {
+    height: 15%;
+    width: 100%;
+    &__icon {
+      height: 30%;
+      width: 15%;
+      margin: 0 auto;
+      &__image {
+        margin: 30px auto;
+      }
+    }
+  }
+}
