@@ -6,6 +6,76 @@
     .main__container
       .main__container__header
         会員情報入力
+      = form_for '', url: "/signup/third", method: :get, html: {class: 'main__container__form'} do |f|
+        .main__container__form__content-top
+          .main__container__form__content-top__nickname
+            .main__container__form__content-top__nickname__label
+              ニックネーム
+            .main__container__form__content-top__nickname__require
+              必須
+            %input.main__container__form__content-top__nickname__text{name: "", type: "text", placeholder: "フリマ男"}
+          .main__container__form__content-top__mail
+            .main__container__form__content-top__mail__label
+              メールアドレス
+            .main__container__form__content-top__mail__require
+              必須
+            %input.main__container__form__content-top__mail__text{name: "", type: "text", placeholder: "PC・携帯どちらでも可"}
+          .main__container__form__content-top__password
+            .main__container__form__content-top__password__label
+              パスワード
+            .main__container__form__content-top__password__require
+              必須
+            %input.main__container__form__content-top__password__text{name: "", type: "text", placeholder: "7文字以上の半角英数字"}
+            .main__container__form__content-top__password__info
+              ※英字と数字の両方を含めて設定してください
+            .main__container__form__content-top__password__check
+            %input#chkbox{type: "checkbox", class: "main__container__form__content-top__password__check__box"}
+            %label{for: "chkbox", class: "main__container__form__content-top__password__check__label"} パスワードを表示する
+          .main__container__form__content-top__identity
+            .main__container__form__content-top__identity__head
+              本人確認
+            .main__container__form__content-top__identity__main
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+          .main__container__form__content-top__name-kanji
+            .main__container__form__content-top__name-kanji__label
+              お名前(全角)
+            .main__container__form__content-top__name-kanji__require
+              必須
+            %input.main__container__form__content-top__name-kanji__family-name{name: "", type: "text", placeholder: "例）田中"}
+            %input.main__container__form__content-top__name-kanji__first-name{name: "", type: "text", placeholder: "例）太郎"}
+          .main__container__form__content-top__name-kana
+            .main__container__form__content-top__name-kana__label
+              お名前カナ(全角)
+            .main__container__form__content-top__name-kana__require
+              必須
+            %input.main__container__form__content-top__name-kana__family-name{name: "", type: "text", placeholder: "例）タナカ"}
+            %input.main__container__form__content-top__name-kana__first-name{name: "", type: "text", placeholder: "例）タロウ"}
+          .main__container__form__content-top__birthday
+            .main__container__form__content-top__birthday__label
+              生年月日
+            .main__container__form__content-top__birthday__require
+              必須
+            .main__container__form__content-top__birthday__select-wrap
+            %input.main__container__form__content-top__birthday__select-wrap__year{name: "", type: "text", placeholder: "年"}
+              年
+            %input.main__container__form__content-top__birthday__select-wrap__month{name: "", type: "text", placeholder: "月"}
+              月
+            %input.main__container__form__content-top__birthday__select-wrap__day{name: "", type: "text", placeholder: "日"}
+              日
+          .main__container__form__content-top__birthday__text
+            ※本人情報は正しく入力してください。会員登録後、修正するにはお時間をいただく場合がございます。
+          .main__container__form__content-top__info
+            .main__container__form__content-top__info__text
+              「次へ進む」のボタンを押すことにより、
+              = link_to "利用規約","#"
+              に同意したものとします
+            .main__container__form__content-top__info__btn
+              = f.submit "次へ進む" ,class: "main__container__form__content-top__info__btn__red" 
+            .main__container__form__content-top__info__text
+              = link_to "#", class: "main__container__form__content-top__info__text__right" 
+              本人情報の登録について
+              %i.fa.fa-angle-right
+             
   .footer
     .footer__center
       %nav
