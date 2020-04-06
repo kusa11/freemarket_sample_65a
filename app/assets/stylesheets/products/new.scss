@@ -1,5 +1,4 @@
-body {
-  height: 100%;
+* {
   margin: 0;
   padding: 0;
 }
@@ -39,10 +38,11 @@ body {
           border-image: initial;
           transition: all 0.5s ease-out 0s;
           &__photo-image {
-            filter: invert(100%) sepia(100%) saturate(6932%) hue-rotate(358deg) brightness(100%) contrast(112%);
+            color : black;
             height: 24px;
             margin-bottom: 8px;
             width: 24px;
+            font-size: 24px;
           }
           &__sentence-text {
             font-size: 12px;
@@ -50,6 +50,9 @@ body {
             width: 100%;
             text-align: center;
             margin-top: 0;
+            input {
+              display: none;
+            }
           }
         }
       }
@@ -120,16 +123,23 @@ body {
           margin-top: 16px;
         }
       }
+      .states-box {
+        margin-top: 32px;
+      }
     }
 
     .delivery-content {
       padding: 40px;
       border-bottom: 2px solid rgb(245, 245, 245);
-      .burden-box {
+      .delivery_fee-box {
         margin-top: 32px;
       }
       
-      .area-box {
+      .delivery_area-box {
+        margin-top: 32px;
+      }
+
+      .delivery_day-box {
         margin-top: 32px;
       }
     }

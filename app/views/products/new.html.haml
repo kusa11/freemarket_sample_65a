@@ -12,13 +12,14 @@
         .description
           最大10枚までアップロードできます
         .upload-box
-          .upload-box__sentence
+          %label.upload-box__sentence
             .upload-box__sentence__photo-image
-              = image_tag "/assets/icon/icon_camera.png", alt: "camera", class: "camera", width: "24px"
+              = icon('fa', 'camera')
             .upload-box__sentence__sentence-text
               ドラッグアンドドロップ
               %br
                 またはクリックしてファイルをアップロード
+              %input{type: "file"}
 
       .product-content
         .product-name
@@ -59,19 +60,40 @@
             %span.any
               任意
           %input.brand-box__brand-input-box{name: "", type: "text", placeholder: "例) シャネル"}
-
+        .states-box
+          .area-box
+            .sell-input-name
+              %label
+                商品の状態
+              %span
+                必須
+            = f.collection_select :states_id, States.all, :id, :name, prompt: "選択してください"
 
       .delivery-content
         %h3
           配送について
-        .burden-box
-          .area-box
-            .sell-input-name
-              %label
-                発送元の地域
-              %span
-                必須
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+        .delivery_fee-box
+          .sell-input-name
+            %label
+              配送料の負担
+            %span
+              必須
+          = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name, prompt: "選択してください"
+        .delivery_area-box
+          .sell-input-name
+            %label
+              発送元の地域
+            %span
+              必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+
+        .delivery_day-box
+          .sell-input-name
+            %label
+              発送元の日数
+            %span
+              必須
+          = f.collection_select :delivery_day_id, DeliveryDay.all, :id, :name, prompt: "選択してください"
 
       .content-bottom
         %h3
