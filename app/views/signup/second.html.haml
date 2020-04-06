@@ -41,15 +41,16 @@
               お名前(全角)
             .main__container__form__content-top__name-kanji__require
               必須  
-            %input.main__container__form__content-top__name-kanji__family-name{name: "", type: "text", placeholder: "例）田中"}
-            %input.main__container__form__content-top__name-kanji__first-name{name: "", type: "text", placeholder: "例）太郎"}
+            = f.text_field :last_name, :type => "text", placeholder:"例)山田", class: "main__container__form__content-top__name-kanji__family-name"
+          = f.text_field :first_name, :type => "text", placeholder:"例)彩", class: "main__container__form__content-top__name-kanji__first-name"
           .main__container__form__content-top__name-kana
             .main__container__form__content-top__name-kana__label
               お名前カナ(全角)
             .main__container__form__content-top__name-kana__require
               必須
-            %input.main__container__form__content-top__name-kana__family-name{name: "", type: "text", placeholder: "例）タナカ"}
-            %input.main__container__form__content-top__name-kana__first-name{name: "", type: "text", placeholder: "例）タロウ"}
+            = f.text_field :last_name_kana, :type => "text", placeholder:"例)ヤマダ", class: "main__container__form__content-top__name-kana__family-name"
+          = f.text_field :first_name_kana, :type => "text", placeholder:"例)アヤ", class: "main__container__form__content-top__name-kana__first-name"
+
           .main__container__form__content-top__birthday
             .main__container__form__content-top__birthday__label
               生年月日
@@ -68,7 +69,7 @@
             .main__container__form__content-top__info__text
               「次へ進む」のボタンを押すことにより、
               = link_to "利用規約","#"
-              に同意したものとします
+              に同意したものとします。
             .main__container__form__content-top__info__btn
               = f.submit "次へ進む" ,class: "main__container__form__content-top__info__btn__red" 
             .main__container__form__content-top__info__text
