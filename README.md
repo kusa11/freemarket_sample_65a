@@ -3,16 +3,15 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false, index: true|
+|nickname|string|null: false, unique: true, index: true|
+|birthday_year|integer|null: false|
+|birthday_month|integer|null: false|
+|birthday_day|integer|null: false|
+|first_name|string|null: false|
 |last_name|string|null: false|
-|family_name_Furigana|string|null: false|
-|last_name_Furigana|string|null: false|
-|nickname|string|null: false|
-|mail-address|string|null: false, unique: true|
-|password|string|null: false|
-|birthday|string|null: false|
-|description|string|null: false|
-|comment|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|phone_number|integer|null: false|
 
 ※deviceを使って記述
 
