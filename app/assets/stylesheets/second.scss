@@ -185,7 +185,6 @@
           }
         }
         &__name-kanji {
-          // height: 100px;
           width: 50%;
           margin: 0 auto;
           padding-top: 60px;
@@ -413,11 +412,12 @@
           text-decoration: none;
         }
       }
-      &__logo {
-        margin: 40px auto 0
+      &__logo--white {
+        margin: 40px;
       }
       .inc {
         font-size: 13px;
+        margin: 0 auto;
         } 
       }
   }
