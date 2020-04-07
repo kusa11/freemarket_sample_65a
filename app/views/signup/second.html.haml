@@ -1,7 +1,5 @@
 .body-register
-  .header
-    .header__icon
-      = link_to image_tag("/assets/logo/logo.png", class: "header__icon__image"), "/"
+  = render 'products/login-header'
   .main
     .main__container
       .main__container__header
@@ -196,17 +194,4 @@
               %i.fa.fa-angle-right
              
   .footer
-    .footer__center
-      %nav
-        %ul.menu
-          %li
-            = link_to "プライバシーポリシー"
-          %li
-            = link_to "フリマ利用規約"
-          %li
-            = link_to "特定商取引に関する表記"
-      .footer__center__logo
-        =link_to image_tag("/assets/logo/logo-white.png", width:"150", height:"65",class:"footer__center__logo--white"),"/"
-      %p.inc
-        ©︎FURIMA,Inc.
-      
+    = render 'products/login-footer'
