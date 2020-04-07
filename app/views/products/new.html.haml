@@ -1,6 +1,123 @@
 .sell-header
   =render 'products/login-header'
 .sell-wrapper
-  =render 'products/form'
+  %form
+    = form_for '' do |f|
+      .upload-content
+        .sell-input-name
+          %label
+            出品画像
+          %span
+            必須
+        .description
+          最大10枚までアップロードできます
+        .upload-box
+          %label.upload-box__sentence
+            .upload-box__sentence__photo-image
+              = icon('fa', 'camera')
+            .upload-box__sentence__sentence-text
+              ドラッグアンドドロップ
+              %br
+                またはクリックしてファイルをアップロード
+              %input{type: "file"}
+
+      .product-content
+        .product-name
+          .sell-input-name
+            %label
+              商品名
+            %span
+              必須
+          %input.product-name__product-name-input{name: "", type: "text", placeholder: "40文字まで"}
+        .product-description
+          .sell-input-name
+            %label
+              商品の説明
+            %span
+              必須
+          %textarea.product-description__text-box{name: "", type: "text", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"}
+          .product-description__text-counter
+            0/1000
+
+      .details-content
+        %h3
+          商品の詳細
+        .category-box
+          .sell-input-name
+            %label
+              カテゴリー
+            %span
+              必須
+          %select.category-box__select-category{name: "example"}
+            %option{value: "", selected: "selected"} ---
+            %option{value: "選択肢1"} 選択肢1
+            %option{value: "選択肢2"} 選択肢2
+            %option{value: "選択肢3"} 選択肢3
+        .brand-box
+          .sell-input-name
+            %label
+              ブランド
+            %span.any
+              任意
+          %input.brand-box__brand-input-box{name: "", type: "text", placeholder: "例) シャネル"}
+        .condition-box
+          .area-box
+            .sell-input-name
+              %label
+                商品の状態
+              %span
+                必須
+            = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択してください"
+
+      .delivery-content
+        %h3
+          配送について
+        .delivery_fee-box
+          .sell-input-name
+            %label
+              配送料の負担
+            %span
+              必須
+          = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name, prompt: "選択してください"
+        .delivery_area-box
+          .sell-input-name
+            %label
+              発送元の地域
+            %span
+              必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+
+        .delivery_day-box
+          .sell-input-name
+            %label
+              発送元の日数
+            %span
+              必須
+          = f.collection_select :delivery_day_id, DeliveryDay.all, :id, :name, prompt: "選択してください"
+
+      .content-bottom
+        %h3
+          価格(300〜9,999,999)
+        .price-box
+          .price-box__first
+            .sell-input-name
+              %label
+                販売価格
+              %span
+                必須
+            .price-box__first__mark
+              ¥
+            %input.price-box__first__money{name: "", type: "text", placeholder: "0"} 
+          .price-box__second
+            .price-box__second__second-left 販売手数料 (10%)
+            .price-box__second__second-right —
+          .price-box__third
+            .price-box__third__third-left 販売利益
+            .price-box__third__third-right —
+        .sell-btn
+          %button.sell-btn__sent{type: 'submit'} 出品する
+          .sell-btn__back もどる 
+        .notes
+          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 .sell-footer
   =render 'products/login-footer'
