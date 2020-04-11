@@ -221,7 +221,7 @@
         line-height: 1;
         overflow: hidden;
       }
-      &__back {
+      a {
         color: #0095ee;
         margin: 0px auto 24px;
         display: flex;
@@ -229,6 +229,7 @@
         height: 20px;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
       }
     }
     .notes {

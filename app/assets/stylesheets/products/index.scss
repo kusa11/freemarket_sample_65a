@@ -139,8 +139,10 @@ ul {
         margin: 20px 0 30px;
       }
       &__list {
+        margin: 24px 0 0 0;
         display: flex;
         &__button {
+          width: 180px;
           margin: 0 10px 0 0;
         }
       }
