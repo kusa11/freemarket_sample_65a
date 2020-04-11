@@ -1,0 +1,26 @@
+.top-header
+  .top-header__inner
+    .top-header__inner__title
+      =link_to image_tag("/assets/logo/logo.png", width:"170"),"/"
+    %input.top-header__inner__searchBox{:name => "search",:placeholder => "キーワードから探す"}
+    %button.top-header__inner__button
+      = image_tag "icon/icon-search 1.png", width: "18px"
+  .top-header__menu
+    .top-header__menu__left
+      .top-header__menu__left__list
+        カテゴリー
+      .top-header__menu__left__list
+        ブランド
+    .top-header__menu__right
+      .top-header__menu__right__btn
+        ログイン
+      .top-header__menu__right__btn
+        新規会員登録
+
+    -# ユーザー登録サーバーサイド
+    -# - if user_signed_in?
+    -#   = link_to "新規投稿", new_post_path, class: "top-header__menu__right__btn"
+    -#   = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "top-header__menu__right__btn"
+    -# - else
+    -#   = link_to "ログイン", new_user_session_path, class: "top-header__menu__right__btn"
+    -#   = link_to "新規会員登録", new_user_registration_path, class: "top-header__menu__right__btn"
