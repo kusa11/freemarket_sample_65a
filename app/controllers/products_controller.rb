@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @products = Product.includes(:images).order('created_at DESC')
   end
 
   def new
@@ -9,12 +10,19 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save
-      redirect_to root_path
-    else
-      render :new
+    respond_to do |format|
+      if @product.save
+          params[:images][:image].each do |image|
+            @product.images.create(image: image, product_id: @product.id)
+          end
+        format.html{redirect_to root_path}
+      else
+        @product.images.build
+        format.html{render action: 'new'}
+      end
     end
   end
+
 
   def show
   end
@@ -24,7 +32,7 @@ class ProductsController < ApplicationController
   
   private
     def product_params
-        params.require(:product).permit(:name, :brand, :description, :condition, :delivery_fee, :delivery_area, :delivery_day, :price, :delivery_day, :price, :category_id, :user_id, images_attributes: [:image, :_destroy, :id])
+        params.require(:product).permit(:name, :brand, :description, :condition, :delivery_fee, :delivery_area, :delivery_day, :price, :delivery_day, :price, :category_id, :user_id, images_attributes: [:image]).merge(user_id: current_user.id)
     end
 
     def product_find

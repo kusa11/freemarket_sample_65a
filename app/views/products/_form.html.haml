@@ -1,5 +1,5 @@
 .content
-  = form_for @product do |f|
+  = form_for @product , html: {id: "item-dropzone"} do |f|
     .upload-content
       .sell-input-name
         %label
@@ -8,16 +8,19 @@
           必須
       .description
         最大10枚までアップロードできます
-      .upload-box
-        %label.upload-box__sentence
-          = f.fields_for :images do |image|
-            .upload-box__sentence__photo-image
-              = icon('fa', 'camera')
-            .upload-box__sentence__sentence-text
-              ドラッグアンドドロップ
-              %br
-                またはクリックしてファイルをアップロード
-              %input{type: "file"}
+      = f.fields_for :image do |image|
+        .dropzone-container
+          #preview
+          .dropzone-area
+            = image.label :image, class: "dropzone-box", for: "upload-image" do
+              .input_area
+                = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+              %p ここをクリックしてください
+        .dropzone-container
+          #preview2
+          .dropzone-area2
+            = image.label :image, class: "dropzone-box", for: "upload-image" do
+              %p ここをクリックしてください
 
     .product-content
       .product-name
@@ -46,11 +49,7 @@
             カテゴリー
           %span
             必須
-        %select{name: "category_id", class: "category-box__select-category"}
-          %option{value: "", selected: "selected"} ---
-          %option{value: "選択肢1"} レディース
-          %option{value: "選択肢2"} メンズ
-          %option{value: "選択肢3"} ベビー・キッズ
+        = f.collection_select :category_id, Category.all, :id, :name, prompt: '選択してください'
       .brand-box
         .sell-input-name
           %label
