@@ -1,25 +1,21 @@
 class ProductsController < ApplicationController
+  before_action :set_product, except: [:index, :new, :create]
+
   def index
     @products = Product.includes(:images).order('created_at DESC')
   end
 
   def new
     @product = Product.new
-    @product.images.build()
+    @product.images.new
   end
 
   def create
     @product = Product.new(product_params)
-    respond_to do |format|
-      if @product.save
-          params[:images][:image].each do |image|
-            @product.images.create(image: image, product_id: @product.id)
-          end
-        format.html{redirect_to root_path}
-      else
-        @product.images.build
-        format.html{render action: 'new'}
-      end
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
@@ -29,13 +25,21 @@ class ProductsController < ApplicationController
 
   def edit
   end
+
+  def update
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
   
   private
     def product_params
         params.require(:product).permit(:name, :brand, :description, :condition, :delivery_fee, :delivery_area, :delivery_day, :price, :delivery_day, :price, :category_id, :user_id, images_attributes: [:image]).merge(user_id: current_user.id)
     end
 
-    def product_find
-        @product = Product.find(params[:id])
+    def set_product
+      @product = Product.find(params[:id])
     end
 end
