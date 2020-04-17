@@ -76,7 +76,7 @@
               商品の状態
             %span
               必須
-          = f.collection_select :condition, Condition.all, :id, :name, prompt: "選択してください"
+          = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択してください"
 
     .delivery-content
       %h3
@@ -87,14 +87,14 @@
             配送料の負担
           %span
             必須
-        = f.collection_select :delivery_fee, DeliveryFee.all, :id, :name, prompt: "選択してください"
+        = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name, prompt: "選択してください"
       .delivery_area-box
         .sell-input-name
           %label
             発送元の地域
           %span
             必須
-        = f.collection_select :delivery_area, Prefecture.all, :id, :name, prompt: "選択してください"
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
 
       .delivery_day-box
         .sell-input-name
@@ -102,7 +102,7 @@
             発送元の日数
           %span
             必須
-        = f.collection_select :delivery_day, DeliveryDay.all, :id, :name, prompt: "選択してください"
+        = f.collection_select :delivery_day_id, DeliveryDay.all, :id, :name, prompt: "選択してください"
 
     .content-bottom
       %h3

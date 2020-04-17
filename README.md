@@ -84,7 +84,7 @@
 |description|text|null: false|
 |condition|integer|null: false|
 |delivery_fee|integer|null: false|
-|delivery_area|integer|null: false|
+|prefecture|integer|null: false|
 |delivery_day|integer|null: false|
 |price|integer|null: false|
 |category|references|null: false, foreign_key: true|
