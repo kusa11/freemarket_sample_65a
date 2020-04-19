@@ -1,0 +1,18 @@
+.body-register3
+  .header
+    = render 'products/login-header'
+  .main
+    .main__container
+      .main__container__header
+        会員登録完了
+      .main__container__form
+        .main__container__form__input
+          .main__container__form__input__label
+            ありがとうございます。
+          .main__container__form__input__require
+            会員登録が完了しました。
+          .main__container__form__btn
+          = link_to "/", class: "main__container__form__btn__red" do
+            メルカリをはじめる
+  .footer
+    = render 'products/login-footer'

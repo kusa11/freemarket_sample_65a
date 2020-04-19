@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'first'
       get 'second'
       get 'third'
+      get 'fourth'
 
 
     end

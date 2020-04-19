@@ -18,7 +18,7 @@
           =icon('fab', 'google',class:'icon')
           Googleでログイン
 
-      .main__logon__bottom
+      .main__login__bottom
         = form_for '', url: "/users/sign_in" do |f|
           = f.email_field :email, placeholder:'メールアドレス',class: 'main__login__bottom__form'
           = f.password_field :password, placeholder:'パスワード',class: 'main__login__bottom__form'

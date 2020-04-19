@@ -1,0 +1,59 @@
+.body-register3 {
+  .main {
+    background-color: rgb(245, 245, 245);
+    height: 85%;
+    padding: 1px;
+    &__container {
+      background-color: white;
+      height: 100%;
+      width: 50%;
+      margin: auto;
+      &__header {
+        background-color: white;
+        height: 100px;
+        font-size: 22px;
+        font-weight: bold;
+        margin: auto;
+        text-align: center;
+        line-height: 100px;
+        border-bottom: #f5f5f5 solid 1px;
+      }
+      &__form {
+        height: 30%;
+        width: 100%;
+        margin: auto;
+        &__input {
+          width: 340px;
+          margin: auto;
+          text-align: center;
+          &__label {
+            margin-top: 40px;
+          }
+          &__require {
+            height: 25px;
+            width: 300px;
+            margin: 5px auto 40px;
+            border-radius: 4px;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        &__btn {
+          &__red {
+            background: #ea352d;
+            display: block;
+            height: 48px;
+            width :335px;
+            margin:0 auto 5px;
+            font-size:14px;
+            color:#fff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 3.3;
+          }
+        }
+      }
+    }
+  }
+}

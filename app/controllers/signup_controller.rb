@@ -7,6 +7,11 @@ class SignupController < ApplicationController
   end
   
   def third
+    @user = User.new
+  end
+
+  def fourth
+    @user = User.new
   end
 
 end
