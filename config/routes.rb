@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'third'
     end
   end
-  resources :products, only: [:index, :new, :show]
+  resources :products, only: [:index, :new, :create ,:show]
 end
 
 

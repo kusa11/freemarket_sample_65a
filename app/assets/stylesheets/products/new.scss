@@ -3,67 +3,71 @@
   padding: 0;
 }
 .sell-wrapper {
-  background-color: rgb(245, 245, 245);
+  background-color: $color-background;
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  form {
-    background-color: #fff;
+  .content {
+    background-color: $color-form;
     width: 700px;
     margin: 0 auto;
     .upload-content {
       padding: 40px;
-      border-bottom: 2px solid rgb(245, 245, 245);
+      border-bottom: 2px solid $color-background;
       .description {
         font-size: 14px;
         line-height: 1.4em;
         margin-top: 16px;
       }
-      .upload-box {
-        margin-top: 16px;
-        height: 150px;
-        &__sentence {
-          align-content: center;
-          -webkit-box-align: center;
-          align-items: center;
-          background-color: rgb(245, 245, 245);
-          cursor: pointer;
+      input {
+        display: none;
+      }
+      .previews {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        &__new-label {
+          width: 116px;
+          height: 150px;
+          margin-top: 16px;
+          background-color: $color-background;
+          flex-grow: 1;
           display: flex;
-          height: 100%;
-          flex-wrap: wrap;
-          -webkit-box-pack: center;
           justify-content: center;
-          position: relative;
+          align-items: center;
           border-width: 1px;
           border-style: dashed;
           border-color: rgb(204, 204, 204);
           border-image: initial;
           transition: all 0.5s ease-out 0s;
-          &__photo-image {
-            color : black;
-            height: 24px;
-            margin-bottom: 8px;
-            width: 24px;
-            font-size: 24px;
-          }
-          &__sentence-text {
-            font-size: 12px;
-            line-height: 1.4em;
-            width: 100%;
-            text-align: center;
-            margin-top: 0;
-            input {
-              display: none;
-            }
-          }
+          cursor: pointer;
+          font-size: 14px;
         }
+      img {
+        background-color: black;
+      }
+      .delete-btn {
+        display: inline-block;
+        cursor: pointer;
+        width: 100%;
+      }
+      }
+      .js-file_input {
+        display: none;
+      }
+      .preview {
+        background-color: $color-background;
+        width: 116px;
+        height: 150px;
+        margin: 16px 4px 0 4px;
+        color: rgb(0, 149, 238);
       }
     }
     .product-content {
       padding: 40px;
-      border-bottom: 2px solid rgb(245, 245, 245);
+      border-bottom: 2px solid $color-background;
       .product-name {
         &__product-name-input {
-          background-color: #fff;
-          border: 1px solid #ccc;
+          background-color: $color-form;
+          border: 1px solid $color-form-border;
           border-radius: 4px;
           box-sizing: border-box;
           color: #222;
@@ -82,7 +86,7 @@
           margin-top: 16px;
           height: 154px;
           width: 100%;
-          border: 1px solid #ccc;
+          border: 1px solid $color-form-border;
           border-radius: 4px;
           box-sizing: border-box;
           color: #222;
@@ -90,7 +94,9 @@
           outline: none;
           padding: 13px 16px;
         }
-        &__text-counter {
+        .counter {
+          display: flex;
+          justify-content: flex-end;
           margin-top: 16px;
           color: #888;
           font-size: 12px;
@@ -102,15 +108,15 @@
     
     .details-content {
       padding: 40px;
-      border-bottom: 2px solid rgb(245, 245, 245);
+      border-bottom: 2px solid $color-background;
       .category-box {
         margin-top: 32px;
       }
       .brand-box {
         margin-top: 32px;
         &__brand-input-box {
-          background-color: #fff;
-          border: 1px solid #ccc;
+          background-color: $color-form;
+          border: 1px solid $color-form-border;
           border-radius: 4px;
           box-sizing: border-box;
           color: #222;
@@ -123,14 +129,14 @@
           margin-top: 16px;
         }
       }
-      .states-box {
+      .condition-box {
         margin-top: 32px;
       }
     }
 
     .delivery-content {
       padding: 40px;
-      border-bottom: 2px solid rgb(245, 245, 245);
+      border-bottom: 2px solid $color-background;
       .delivery_fee-box {
         margin-top: 32px;
       }
@@ -160,8 +166,8 @@
           }
           &__money {
             text-align: right;
-            background-color: #fff;
-            border: 1px solid #ccc;
+            background-color: $color-form;
+            border: 1px solid $color-form-border;
             border-radius: 4px;
             box-sizing: border-box;
             color: #222;
@@ -175,7 +181,7 @@
           }
         }
         &__second {
-          border-bottom: 2px solid rgb(245, 245, 245);
+          border-bottom: 2px solid $color-background;
           align-items: center;
           box-sizing: content-box;
           height: 46px;
@@ -209,7 +215,7 @@
       &__sent {
         width: 360px;
         background-color: #ea352d;
-        color: #fff;
+        color: $color-form;
         margin-bottom: 24px;
         font-size: 17px;
         min-height: 48px;
@@ -241,15 +247,14 @@
     h3 {
       color: rgb(136, 136, 136);
       font-size: 14px;
-      font-weight: 600;
       line-height: 1.4em;
       margin-top: 0;
       margin-bottom: 24px;
     }
     
     select {
-      background-color: #fff;
-      border: 1px solid #ccc;
+      background-color: $color-form;
+      border: 1px solid $color-form-border;
       border-radius: 4px;
       box-sizing: border-box;
       color: #222;
@@ -275,8 +280,8 @@
         margin-left: 8px;
         font-size: 12px;
         padding: 0 4px;
-        background-color: #ff0211;
-        color: #fff;
+        background-color: $color-required;
+        color: $color-form;
         border-radius: 2px;
         display: inline-block;
         font-style: normal;
@@ -285,7 +290,7 @@
         white-space: nowrap;
       }
       span.any {
-        background-color: #bfbfbf;
+        background-color: $color-Any;
       }
     }
   }

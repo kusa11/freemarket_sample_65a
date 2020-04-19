@@ -66,6 +66,8 @@ gem 'mini_magick'
 gem 'fog-aws'
 
 gem 'haml-rails'
+gem 'erb2haml'
 gem 'devise'
 gem 'active_hash'
 gem "font-awesome-sass"
+gem "jquery-rails"
