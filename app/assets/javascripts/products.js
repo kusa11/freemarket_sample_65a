@@ -49,7 +49,6 @@ $(document).on('turbolinks:load', ()=> {
           $('.js-file_label').hide();
         }
       }
-      console.log(fileNumbers)
     })
 
     // 削除ボタンを押した時のイベント
