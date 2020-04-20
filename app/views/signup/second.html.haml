@@ -1,17 +1,18 @@
 .body-register
-  = render 'products/login-header'
+  .header
+    = render 'products/login-header'
   .main
     .main__container
       .main__container__header
         会員情報入力
-      = form_for '', url: "/signup/third", method: :get, html: {class: 'main__container__form'} do |f|
+      = form_for @user, url: "/signup/third", method: :get, html: {class: 'main__container__form'} do |f|
         .main__container__form__content-top
           .main__container__form__content-top__nickname
             .main__container__form__content-top__nickname__label
               ニックネーム
             .main__container__form__content-top__nickname__require
               必須
-            = f.text_field :nickname, :type => "text", placeholder:"フリマ男", class: "main__container__form__content-top__nickname__text"
+            = f.text_field :nickname, :type => "text", placeholder:"例)フリマ太郎", class: "main__container__form__content-top__nickname__text"
           .main__container__form__content-top__mail
             .main__container__form__content-top__mail__label
               メールアドレス
@@ -27,8 +28,8 @@
             .main__container__form__content-top__password__info
               ※英字と数字の両方を含めて設定してください
             .main__container__form__content-top__password__check
-              %input#chkbox{type: "checkbox", class: "main__container__form__content-top__password__check__box"}
-              %label{for: "chkbox", class: "main__container__form__content-top__password__check__label"} パスワードを表示する
+              %input#chkbox{:type => "checkbox", class: "main__container__form__content-top__password__check__box"}
+              %label{:for => "chkbox", class: "main__container__form__content-top__password__check__label"} パスワードを表示する
           .main__container__form__content-top__identity
             .main__container__form__content-top__identity__head
               本人確認
@@ -38,23 +39,23 @@
             .main__container__form__content-top__name-kanji__label
               お名前(全角)
             .main__container__form__content-top__name-kanji__require
-              必須  
-            = f.text_field :last_name, :type => "text", placeholder:"例)田中", class: "main__container__form__content-top__name-kanji__family-name"
-          = f.text_field :first_name, :type => "text", placeholder:"例)太郎", class: "main__container__form__content-top__name-kanji__first-name"
+              必須
+          .main__container__form__content-top__name-kanji__box
+            = f.text_field :last_name, :type => "text", placeholder:"例)田中", class: "main__container__form__content-top__name-kanji__box__family-name"
+            = f.text_field :first_name, :type => "text", placeholder:"例)太郎", class: "main__container__form__content-top__name-kanji__box__first-name"
           .main__container__form__content-top__name-kana
             .main__container__form__content-top__name-kana__label
               お名前カナ(全角)
             .main__container__form__content-top__name-kana__require
               必須
+          .main__container__form__content-top__name-kana__box
             = f.text_field :last_name_kana, :type => "text", placeholder:"例)タナカ", class: "main__container__form__content-top__name-kana__family-name"
-          = f.text_field :first_name_kana, :type => "text", placeholder:"例)タロウ", class: "main__container__form__content-top__name-kana__first-name"
-
+            = f.text_field :first_name_kana, :type => "text", placeholder:"例)タロウ", class: "main__container__form__content-top__name-kana__first-name"
           .main__container__form__content-top__birthday
             .main__container__form__content-top__birthday__label
               生年月日
             .main__container__form__content-top__birthday__require
               必須
-            .main__container__form__content-top__birthday__select-wrap
             .main__container__form__content-top__birthday__select-wrap
               = f.select :birth_year, :type => "text", placeholder:"", class: "main__container__form__content-top__birthday__select-wrap__year" do
                 %option{:value => ""} --
@@ -179,8 +180,8 @@
                 %option{:value => "30"} 30
                 %option{:value => "31"} 31
               日
-          .main__container__form__content-top__birthday__text
-            ※本人情報は正しく入力してください。会員登録後、修正するにはお時間をいただく場合がございます。
+            .main__container__form__content-top__birthday__text
+              ※本人情報は正しく入力してください。会員登録後、修正するにはお時間をいただく場合がございます。
           .main__container__form__content-top__info
             .main__container__form__content-top__info__text
               「次へ進む」のボタンを押すことにより、
@@ -189,9 +190,5 @@
             .main__container__form__content-top__info__btn
               = f.submit "次へ進む" ,class: "main__container__form__content-top__info__btn__red" 
             .main__container__form__content-top__info__text
-              = link_to "#", class: "main__container__form__content-top__info__text__right" 
-              本人情報の登録について
-              %i.fa.fa-angle-right
-             
   .footer
     = render 'products/login-footer'
