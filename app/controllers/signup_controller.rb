@@ -33,12 +33,6 @@ class SignupController < ApplicationController
     @user.build_address
   end
 
-  def sixth
-    @user = User.new
-  end
-
-
-
 
   def create
     @user = User.new(
@@ -54,7 +48,7 @@ class SignupController < ApplicationController
       last_name_kana: session[:user_last_name_kana],
       phone_number: session[:phone_number]
     )
-    if @user.save(
+    if @user.save
        @address = @user.build_address(
         first_name: session[:address_first_name],
         last_name: session[:address_last_name],
@@ -68,12 +62,13 @@ class SignupController < ApplicationController
         building: session[:building],
         )      
       @address.save
-      session[:id] = @user.id
-      redirect_to '/signup/done'
+        session[:id] = @user.id
+        redirect_to '/signup/done'
       else
         render '/signup/first'
     end
   end
+
 
   private
   
