@@ -45,7 +45,6 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'spring'
   gem 'pry-rails'
-  gem 'compass-rails'
   gem 'sprockets'
   gem 'kaminari'
 end
