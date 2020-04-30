@@ -1,18 +1,38 @@
-.body-register3
+.body-phone2
   .header
     = render 'products/login-header'
   .main
     .main__container
       .main__container__header
-        会員登録完了
-      .main__container__form
+        電話番号認証
+      = form_for @user, url: "/signup/fifth", method: :get, html: {class: 'main__container__form'} do |f|
         .main__container__form__input
           .main__container__form__input__label
-            ありがとうございます。
+            認証番号
           .main__container__form__input__require
-            会員登録が完了しました。
-          .main__container__form__btn
-          = link_to "/", class: "main__container__form__btn__red" do
-            メルカリをはじめる
+            必須
+          = f.text_field :phone_number, :type => "text", placeholder:"認証番号を入力", class: "main__container__form__input__text"
+        .main__container__form__info
+          SMSで届いた認証番号を入力してください
+        .main__container__form__btn
+          = f.submit "認証して完了" ,class: "main__container__form__btn__red" 
+      .main__container__next
+        .main__container__next__box
+          .main__container__next__box__label
+            30秒たっても認証番号が届かない方へ
+          .main__container__next__box__info
+            電話で認証番号を聞くこともできます。
+        .main__container__next__btn
+          = link_to "#", class: "main__container__next__btn__red" do
+            電話で認証番号を聞く（通話無料）
+      .main__container__bottom
+        .main__container__bottom__label
+          認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+        .main__container__bottom__again
+          = link_to "電話番号を再度入力する", "#", class: "main__container__bottom__again__label"
+        .main__container__bottom__info
+          ※SMSが届かない場合は
+          = link_to "SMS受信設定", "#", class: "main__container__bottom__info__label"
+          を確認して、もう一度電話番号を入力してください。
   .footer
     = render 'products/login-footer'

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
   root 'products#index'
   resources :products, only: [:index, :new, :show]
 
@@ -10,7 +11,9 @@ Rails.application.routes.draw do
       get 'second'
       get 'third'
       get 'fourth'
-
+      get 'fifth'
+      get 'sixth'
+      get 'done'
 
     end
   end
