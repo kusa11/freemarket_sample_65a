@@ -30,7 +30,7 @@ class SignupController < ApplicationController
 
   def fifth
     @user = User.new
-    # @user.build_address
+    @user.build_address
   end
 
   def sixth
@@ -55,7 +55,7 @@ class SignupController < ApplicationController
       phone_number: session[:phone_number]
     )
     if @user.save(
-      #  @address = @user.build_address(
+       @address = @user.build_address(
         first_name: session[:address_first_name],
         last_name: session[:address_last_name],
         first_name_kana: session[:address_first_name_kana],

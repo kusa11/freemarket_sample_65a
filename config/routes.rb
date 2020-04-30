@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       get 'third'
       get 'fourth'
       get 'fifth'
-      get 'sixth'
       get 'done'
 
     end
