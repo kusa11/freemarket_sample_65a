@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
   before_action :authenticate_user!
@@ -9,6 +10,12 @@ class ApplicationController < ActionController::Base
   # ユーザー登録のサーバーサイドの際に追加してください。
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :birth_year, :birth_month, :birth_day, :first_name, :last_name, :first_name_kana, :last_name_kana, :pay_id])
   end
 
   private

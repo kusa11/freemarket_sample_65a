@@ -1,0 +1,65 @@
+.body-register2
+  .header
+    = render 'products/login-header'
+  .main
+    = form_for '', url: done_signup_index_path, method: :get, html: {class: 'main__container'} do |f|
+      .main__container__header
+        発送元・お届け先住所入力
+      = f.fields_for :address, html: {class: 'main__container__form'} do |i|
+        .main__container__form__kanji
+          .main__container__form__kanji__title
+            お名前 
+          .main__container__form__kanji__hissu
+            必須
+          .main__container__form__kanji__require
+            = i.text_field :last_name, placeholder:"例)田中", class: "main__container__form__kanji__require__family-name"
+            = i.text_field :first_name, placeholder:"例)太郎", class: "main__container__form__kanji__require__first-name"
+        .main__container__form__kana
+          .main__container__form__kana__title
+            お名前カナ
+          .main__container__form__kana__hissu
+            必須
+          .main__container__form__kana__require
+            = i.text_field :last_name_kana, placeholder:"例)タナカ", class: "main__container__form__kana__require__family-name"
+            = i.text_field :first_name_kana, placeholder:"例)タロウ", class: "main__container__form__kana__require__first-name"
+        .main__container__form__post
+          .main__container__form__post__title
+            郵便番号
+          .main__container__form__post__require
+            必須
+          = i.text_field :post_number, placeholder:"例)123-4567", class: "main__container__form__post__number"
+        .main__container__form__pref
+          .main__container__form__pref__title
+            都道府県
+          .main__container__form__pref__hissu
+            必須
+          .main__container__form__pref__require
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+          .main__container__form__city
+            .main__container__form__city__title
+              市区町村
+            .main__container__form__city__require
+              必須
+            = i.text_field :city, placeholder:"例)熊本県熊本市", class: "main__container__form__city__detail"
+          .main__container__form__addnumber
+            .main__container__form__addnumber__title
+              番地
+            .main__container__form__addnumber__require
+              必須
+            = i.text_field :address_number, placeholder:"例)通町筋1-1-1", class: "main__container__form__addnumber__detail"
+          .main__container__form__build
+            .main__container__form__build__title
+              建物名
+            .main__container__form__build__require
+              任意
+            = i.text_field :building, placeholder:"例)下通りビル109", class: "main__container__form__build__detail"
+          .main__container__form__phone
+            .main__container__form__phone__title
+              電話
+            .main__container__form__phone__require
+              任意
+            = i.text_field :phone_number, placeholder:"例)05012345678", class: "main__container__form__phone__detail"
+          .main__container__form__btn
+            = f.submit "次へ進む" ,class: "main__container__form__btn__red"
+  .footer
+    = render 'products/login-footer'

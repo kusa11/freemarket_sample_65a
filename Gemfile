@@ -43,6 +43,10 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'spring'
+  gem 'pry-rails'
+  gem 'sprockets'
+  gem 'kaminari'
 end
 
 group :development do
@@ -70,4 +74,9 @@ gem 'erb2haml'
 gem 'devise'
 gem 'active_hash'
 gem "font-awesome-sass"
+
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'active_hash'
+
 gem "jquery-rails"

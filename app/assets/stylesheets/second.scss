@@ -1,251 +1,243 @@
 .body-register {
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  background-color: #f5f5f5;
-  height: 1500px;  
-  .header {
-    height: 15%;
-    width: 100%;
-    &__icon {
-      height: 30%;
-      width: 15%;
-      margin: 0 auto;
-      &__image {
-        margin: 30px auto;
-      }
-    }
-  }
+  background-color: rgb(245, 245, 245);
+  height: 1500px;
   .main {
-    background-color: #f5f5f5;
+    background-color: rgb(245, 245, 245);
     height: 90%;
     &__container {
-      background-color: #ffffff;
+      background-color: white;
       height: 100%;
       width: 50%;
-      margin: 0 auto;
+      margin: auto;
       &__header {
+        background-color: white;
         height: 100px;
-        background-color: #ffffff;
         font-size: 22px;
         font-weight: bold;
-        margin: 0 auto;
+        margin: auto;
         text-align: center;
         line-height: 100px;
-        border-bottom: #ffffff solid 1px;
-    }
+        border-bottom: #f5f5f5 solid 1px;
+      }
       &__form {
-      height: 100%;
-      width: 100%;
-      margin: 0 auto;
-      &__content-top {
-        height: 90%;
+        height: 100%;
         width: 100%;
         margin: auto;
-        padding-top: 30px;    
-        &__nickname {
-          height: 100px;
-          width: 50%;
+        &__content-top {
+          height: 90%;
+          width: 100%;
           margin: auto;
-          &__label {
-            font-weight: 550px;
-            display: inline-block;
-          }
-          &__require {
-            font-size: 12px;
-            background: #e7342b;
-            color: #ffffff;
-            display: inline-block;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            vertical-align: top;
-          }
-          &__text {
-            height: 50px;
-            width: 300px;
-            margin: 8px 0 0;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-          }
-      }
-        &__mail {
-          height: 100px;
-          width: 50%;
-          margin: 0 auto;
-          &__label {
-            font-weight: 550px;
-            display: inline-block;
-          }
-          &__require {
-            font-size: 12px;
-            background: #e03229;
-            display: inline-block;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            vertical-align: top;
-          }
-          &__text {
-            height: 50px;
-            width: 300px;
-            font-size: 16px;
-            margin: 8px 0 0;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-          }
-        }
-        &__password {
-          height: 140px;
-          width: 50%;
-          margin: auto;
-          &__label {
-            font-weight: 550;
-            display: inline-block;
-          }
-          &__require {
-            background: #f0372d;
-            display: inline-block;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
-          }
-          &__text {
-            height: 50px;
-            width: 300px;
-            font-size: 16px;
-            margin: 8px 0 0;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-          }
-          &__info {
-            color: rgb(134, 133, 133);
-            font-size: 15px;
-            margin-top: 10px;
-          }
-        }
-        &__check {
-          margin-top: 16px;
-          &__box {
-            position: relative;
-            z-index: 2;
-            padding: 0 0 0 28px;
-            font-size: 14px;
-            font-weight: 400;
-            vertical-align: middle;
-            cursor: pointer;
-          }
-          &::before {
-            content:'';
-            width:32px;
-            height:32px;
-            display:inline-block;
-            position:absolute;
-            left:0;
-            background-color: #fff;
-            box-shadow:	inset 1px 2px 3px 0px #000;
-            border-radius:6px 6px 6px 6px;
-          }
-          &__box nput[type=checkbox] {
-              display: none;
+          padding-top: 30px;
+          &__nickname {
+            height: 100px;
+            width: 50%;
+            margin: auto;
+            &__label {
+              font-weight: 550;
+              display: inline-block;
             }
-          &__label {
-            z-index: 2;
-            padding: 0 0 0 28px;
-            font-size: 14px;
-            font-weight: 400;
-            vertical-align: middle;
-            cursor: pointer;
+            &__require {
+              background: #ea352d;
+              display: inline-block;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__text {
+              height: 50px;
+              width: 300px;
+              margin: 8px 0 0;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+          &__mail {
+            height: 100px;
+            width: 50%;
+            margin: auto;
+            &__label {
+              font-weight: 550;
+              display: inline-block;
+            }
+            &__require {
+              background: #ea352d;
+              display: inline-block;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__text {
+              height: 50px;
+              width: 300px;
+              margin: 8px 0 0;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+          }
+          &__password {
+            height: 140px;
+            width: 50%;
+            margin: auto;
+            &__label {
+              font-weight: 550;
+              display: inline-block;
+            }
+            &__require {
+              background: #ea352d;
+              display: inline-block;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+            &__text {
+              height: 50px;
+              width: 300px;
+              margin: 8px 0 0;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+            &__info {
+              color: #888;
+              font-size: 15px;
+              margin-top: 10px;
+            }
+          }
+          &__check {
+            margin-top: 16px;
+            &__box {
+              position: relative;
+              z-index: 2;
+              padding: 0 0 0 28px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+            &::before {
+              content:'';
+              width:32px;
+              height:32px;
+              display:inline-block;
+              position:absolute;
+              left:0;
+              background-color: #fff;
+              box-shadow:	inset 1px 2px 3px 0px #000;
+              border-radius:6px 6px 6px 6px;
+            }
+            &__box nput[type=checkbox] {
+                display:		none;
+              }
+            &__label {
+              z-index: 2;
+              padding: 0 0 0 28px;
+              font-size: 14px;
+              font-weight: 400;
+              vertical-align: middle;
+              cursor: pointer;
+            }
+          }
+          &__identity {
+            height: 100px;
+            width: 50%;
+            margin: auto;
+            padding-top: 40px;
+            &__head {
+              font-size: 16px;
+              font-weight: 550;
+            }
+            &__main {
+              margin: 8px 0 0;
+              font-size: 14.5px;
+            }
+          }
+          &__name-kanji {
+            height: 90px;
+            width: 50%;
+            margin: auto;
+            padding-top: 60px;
+            &__label {
+              font-weight: 550;
+              display: inline-block;
+            }
+            &__require {
+              background: #ea352d;
+              display: inline-block;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+          &__box {
+            text-align: center;
+            &__family-name {
+              height: 50px;
+              width: 140px;
+              margin: 8px 0 0;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
+            &__first-name {
+              height: 50px;
+              width: 140px;
+              margin: 8px 0 0;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: #fff;
+              line-height: 1.5;
+              font-size: 16px;
+            }
           }
         }
-        &__identity {
-          height: 100px;
-          width: 50%;
-          margin: auto;
-          padding-top: 40px;
-          &__head {
-            font-size: 16px;
-            font-weight: 550px;
-          }
-          &__main {
-            margin: 8px 0 0;
-            font-size: 14.5px;
-          }
-        }
-        &__name-kanji {
-          // height: 100px;
-          width: 50%;
-          margin: 0 auto;
-          padding-top: 60px;
-          &__label {
-            font-weight: 550;
-            display: inline-block;
-          }
-          &__require {
-            background: #ea352d;
-            display: inline-block;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
-          }
-          &__family-name {
-            height: 50px;
-            width: 140px;
-            margin: 8px 0 0;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-            float: left;
-          }
-          &__first-name {
-            height: 50px;
-            width: 140px;
-            font-size: 16px;
-            margin: 8px 25px;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-          
-          }
-        }
-        &__name-kana {
-          height: 90px;
-          width: 50%;
-          margin: 0 auto;
-          padding-top: 60px;
-          &__label {
-            font-weight: 550;
-            display: inline-block;
-          }
-          &__require {
-            background: #ea352d;
-            display: inline-block;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
+          &__name-kana {
+            height: 40px;
+            width: 50%;
+            margin: auto;
+            padding-top: 20px;
+            &__label {
+              font-weight: 550;
+              display: inline-block;
+            }
+            &__require {
+              background: #ea352d;
+              display: inline-block;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+            }
+          &__box {
+            text-align: center;
           }
             &__family-name {
               height: 50px;
@@ -261,54 +253,42 @@
             &__first-name {
               height: 50px;
               width: 140px;
-              margin: 0px 32px;
+              margin: 8px 0 0;
               padding: 10px 16px 8px;
               border-radius: 4px;
               border: 1px solid #ccc;
               background: #fff;
               line-height: 1.5;
               font-size: 16px;
-              float: right;
             }
           }
           &__birthday {
-            // width: 50%;
-            margin: 0 75px;
-            padding-top: 80px;
+            width: 50%;
+            margin: auto;
+            padding-top: 20px ;
             &__label {
               font-weight: 550;
               display: inline-block;
             }
             &__require {
-              background: #ee352c;
-              font-size: 12px;
+              background: #ea352d;
               display: inline-block;
               margin: 0 0 0 8px;
               padding: 2px 4px;
               border-radius: 2px;
               color: #fff;
+              font-size: 12px;
               vertical-align: top;
             }
             &__select-wrap {
               position: relative;
-              .fa-chevron-down {
+              width:300px;
+              .fa-chevron-down{
                 position: absolute;
                 top: 25px;
                 left: 50px;
               }
-              &__year {
-                display: inline-block;
-                height: 50px;
-                width: 70px;
-                background: #fff;
-                margin: 8px 3px 3px;
-                padding: 10px 16px 8px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                line-height: 1.5;
-                font-size: 16px;
-              }
-              &__month {
+              #user_birth_year {
                 display: inline-block;
                 height: 50px;
                 width: 70px;
@@ -320,21 +300,33 @@
                 line-height: 1.5;
                 font-size: 16px;
               }
-              &__day {
+              #user_birth_month {
                 display: inline-block;
                 height: 50px;
                 width: 70px;
-                background: #fff;
                 margin: 8px 3px 3px;
                 padding: 10px 16px 8px;
                 border-radius: 4px;
                 border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+              #user_birth_day {
+                display: inline-block;
+                height: 50px;
+                width: 70px;
+                margin: 8px 3px 3px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
                 line-height: 1.5;
                 font-size: 16px;
               }
             }
             &__text {
-              color: #838080;
+              color: #888;
               font-size: 15px;
               margin-top: 10px;
             }
@@ -342,17 +334,17 @@
           &__info {
             height: 25%;
             width: 50%;
-            margin: 0 auto;
+            margin: auto;
             &__text {
               font-size: 14.5px;
               margin-top: 30px;
               a{
-                color: #0594db;
+                color: #0099e8;
                 text-decoration: none;
               }
             }
             &__btn {
-              &__red {
+              &__red{
                 background: #ea352d;
                 display: block;
                 height: 48px;
@@ -365,17 +357,8 @@
                 line-height: 3.3;
               }
             }
-            &__text {
-              margin-bottom: 20px;
-              text-align: right;
-              font-size: 14.5px;
-              &__right {
-                display: inline;
-                color: #0594db;
-                text-decoration: none;
-              }
               .icon{
-                color: #0594db;
+                color:#0099e8 ;
                 font-size: 20px;
               }
             }
@@ -388,37 +371,19 @@
               width :100%;
               margin: auto;
               padding: 10px;
+              &__policy {
+                display: inline;
+                color: #0099e8;
+                text-decoration: none;
+              }
+              &__service {
+                display: inline;
+                color: #0099e8;
+                text-decoration: none;
+              }
             }
           }
         }
       }
     }
   }
-  .footer {
-    background-color: #EEEEEE;
-    &__center {
-    width: 450px;
-    height: 220px;
-    margin: 0 auto;
-    padding: 40px 0;
-    text-align: center;
-      .menu {
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        padding: 0;
-        a {
-          font-size: 12px;
-          color:black;
-          text-decoration: none;
-        }
-      }
-      &__logo {
-        margin: 40px auto 0
-      }
-      .inc {
-        font-size: 13px;
-        } 
-      }
-  }
-}

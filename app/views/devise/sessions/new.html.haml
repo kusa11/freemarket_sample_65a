@@ -1,7 +1,6 @@
 .main-signin
-  .header
-    .header__logo
-      =link_to image_tag("/assets/logo/logo.png", width:"185", height:"50"),"/"
+  .header 
+    = render 'products/login-header'
   .main
     .main__login
       .main__login__account
@@ -9,38 +8,23 @@
           アカウントをお持ちでない方はこちら
         =link_to "/signup/first" do
           新規会員登録
-      
       .main__login__inner
-        =link_to "#", class: "main__login__inner__btn main__login__inner__btn--facebook" do
+        = link_to "#", class: "main__login__inner__btn main__login__inner__btn--facebook" do
           = icon('fab', 'facebook-square',class:'icon')
           Facebookでログイン
-        =link_to "#", class: "main__login__inner__btn main__login__inner__btn--google" do
-          =icon('fab', 'google',class:'icon')
+        = link_to "#", class: "main__login__inner__btn main__login__inner__btn--google" do
+          = icon('fab', 'google',class:'icon')
           Googleでログイン
-
-      .main__logon__bottom
-        = form_for '', url: "/users/sign_in" do |f|
+      .main__login__bottom
+        = form_for @user, url: "sign_in" do |f|
           = f.email_field :email, placeholder:'メールアドレス',class: 'main__login__bottom__form'
           = f.password_field :password, placeholder:'パスワード',class: 'main__login__bottom__form'
           .main__login__bottom__robot
-            □ 私はロボットではありません
+            Googleのロボット
           .main__login__bottom__login
-            = f.submit "ログイン", class: "main__login__bottom__login"
+            = f.submit "ログイン", class: "main__login__bottom__login" 
         .main__login__bottom__passwordforgot
           = link_to "#", class: "main__login__bottom__passwordforgot" do
             パスワードお忘れの方
-
   .footer
-    .footer__center
-      %nav
-        %ul.menu
-          %li
-            = link_to "プライバシーポリシー","#"
-          %li
-            = link_to "フリマ利用規約","#"
-          %li
-            = link_to "特定商取引に関する表記","#"
-      .footer__center__logo
-        =link_to image_tag("/assets/logo/logo-white.png", width:"80", height:"65",class:"footer__center__logo--white"),"#"
-      %p.inc
-        ©︎FURIMA,Inc.
+    = render 'products/login-footer'
