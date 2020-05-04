@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   validates :nickname, :birth_year, :birth_month, :birth_day, :first_name, :last_name, :first_name_kana, :last_name_kana,presence: true
   has_one :address
   accepts_nested_attributes_for :address
-
+  validates :name, presence: true, uniqueness: true
 end

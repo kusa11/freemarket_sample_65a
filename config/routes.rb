@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 }
   root 'products#index'
   resources :products, only: [:index, :new, :show]
-
-
   resources :signup do
     collection do
       get 'first'
@@ -14,9 +12,9 @@ Rails.application.routes.draw do
       get 'fourth'
       get 'fifth'
       get 'done'
-
     end
   end
+  resources :products, only: [:index, :new, :create ,:show]
 end
 
 

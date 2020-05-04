@@ -70,9 +70,13 @@ gem 'mini_magick'
 gem 'fog-aws'
 
 gem 'haml-rails'
+gem 'erb2haml'
 gem 'devise'
 gem 'active_hash'
 gem "font-awesome-sass"
+
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'active_hash'
+
+gem "jquery-rails"

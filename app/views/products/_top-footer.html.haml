@@ -1,0 +1,56 @@
+
+.apBanner
+  .apBanner__inner
+    .apBanner__inner__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .apBanner__inner__text
+      今すぐ無料ダウンロード！
+    .apBanner__inner__icon
+      .apBanner__inner__icon__button
+        = image_tag "logo/app-store.svg", width: "180px", alt: "app-store"
+      .apBanner__inner__icon__button
+        = image_tag "logo/google-play.svg", width: "180px", alt: "google-play"
+
+.top-footer
+  .top-footer__contents
+    .top-footer__contents__content
+      .top-footer__contents__content__head
+        FURIMAについて
+      %ul
+        %li
+          = link_to "会社概要（運営会社）", "#"
+        %li
+          = link_to "プライバシーポリシー", "#"
+        %li
+          = link_to "FURIMA利用規約", "#"
+        %li
+          = link_to "ポイントに関する特約", "#"
+    .top-footer__contents__content
+      .top-footer__contents__content__head
+        FURIMAを見る
+      %ul
+        %li
+          = link_to "カテゴリー一覧", "#"
+        %li
+          = link_to "ブランド一覧", "#"
+    .top-footer__contents__content
+      .top-footer__contents__content__head
+        ヘルプ＆ガイド
+      %ul
+        %li
+          = link_to "FURIMAガイド", "#"
+        %li
+          = link_to "FURIMAロゴ利用ガイドライン", "#"
+        %li
+          = link_to "お知らせ", "#"
+
+  .top-footer__logo
+    = link_to image_tag("logo/logo-white.png", width: "160px"), "#"
+  %p.top-footer__copyright
+    ©️ FURIMA
+
+  .top-footer__exhibit
+    出品する
+    .top-footer__exhibit__pic
+      = link_to image_tag("icon/icon_camera.png", width: "54px"), "/products/new"
+
