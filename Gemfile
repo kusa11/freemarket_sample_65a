@@ -75,3 +75,4 @@ gem 'active_hash'
 gem "font-awesome-sass"
 gem 'rspec-rails'
 gem 'factory_bot_rails'
+gem 'active_hash'

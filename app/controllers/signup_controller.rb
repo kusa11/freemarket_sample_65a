@@ -61,12 +61,16 @@ class SignupController < ApplicationController
         address_number: session[:address_number],
         building: session[:building],
         )      
-      @address.save
-        session[:id] = @user.id
-        redirect_to '/signup/done'
       else
-        render '/signup/first'
+        render first_signup_index_path
     end
+    if @address.save
+        session[:id] = @user.id
+        redirect_to done_signup_index_path
+    else
+        render first_signup_index_path
+    end
+
   end
 
 
