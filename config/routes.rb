@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :products, only: [:index, :new, :create ,:show]
 end
 
 
