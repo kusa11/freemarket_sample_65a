@@ -1,5 +1,6 @@
 class SignupController < ApplicationController
 
+
   def first
   end
 
@@ -30,7 +31,7 @@ class SignupController < ApplicationController
 
   def fifth
     @user = User.new
-    @user.build_address
+    # @user.build_address
   end
 
 
@@ -48,8 +49,8 @@ class SignupController < ApplicationController
       last_name_kana: session[:user_last_name_kana],
       phone_number: session[:phone_number]
     )
-    if @user.save
-       @address = @user.build_address(
+    if @user.save(
+      #  @address = @user.build_address(
         first_name: session[:address_first_name],
         last_name: session[:address_last_name],
         first_name_kana: session[:address_first_name_kana],
@@ -60,16 +61,17 @@ class SignupController < ApplicationController
         city: session[:city],
         address_number: session[:address_number],
         building: session[:building],
-        )      
+        # )      
+    )
       else
         render first_signup_index_path
     end
-    if @address.save
-        session[:id] = @user.id
-        redirect_to done_signup_index_path
-    else
-        render first_signup_index_path
-    end
+    # if @address.save
+    #     session[:id] = @user.id
+    #     redirect_to done_signup_index_path
+    # else
+    #     render first_signup_index_path
+    # end
 
   end
 

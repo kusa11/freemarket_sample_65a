@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    registrations: 'users/registrations'
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+    
 }
   root 'products#index'
   resources :products, only: [:index, :new, :show]
-  resources :signup do
+  resources :signup, only: [:create] do 
     collection do
       get 'first'
       get 'second'
