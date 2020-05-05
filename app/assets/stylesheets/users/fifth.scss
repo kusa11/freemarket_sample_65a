@@ -90,6 +90,7 @@
             vertical-align: top;
           }
           &__require {
+            width: 100%;
             display: inline-block;
             margin: 0 0 0 8px;
             padding: 2px 4px;
@@ -98,7 +99,7 @@
             font-size: 13px;
             vertical-align: top;
           }
-          &__family-name {
+          #address_last_name {
             height: 25px;
             width: 300px;
             margin: 8px auto 0;
