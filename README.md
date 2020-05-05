@@ -4,6 +4,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false, unique: true, index: true|
+|email|string|null: false|
+|password|string|null: false|
 |birthday_year|integer|null: false|
 |birthday_month|integer|null: false|
 |birthday_day|integer|null: false|
@@ -37,15 +39,21 @@
 
 
 
-## street_adressテーブル
+## adressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|postal_code|integer|null: false|
+|frist_name|string|null: false|
+|last_name|string|null: false|
+|frist_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|post_number|intger|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|
-|adress|string|null: false|
-|build|string|null: false|
+|address_number|string|null: false|
+|buildng|string|null: false|
+|user|references|null: false, foreign_key: true|
+|phone_number|intger|null: false|
+
 
 ### Association
 -  belongs_to :user
