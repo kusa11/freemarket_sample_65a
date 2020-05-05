@@ -314,8 +314,8 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
-  factory_bot_rails
   erb2haml
+  factory_bot_rails
   fog-aws
   font-awesome-sass
   haml-rails
