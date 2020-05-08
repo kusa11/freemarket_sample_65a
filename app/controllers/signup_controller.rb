@@ -49,7 +49,7 @@ class SignupController < ApplicationController
       last_name_kana: session[:user_last_name_kana],
       phone_number: session[:phone_number]
     )
-    if @user.save(
+    if @user.save!(
       #  @address = @user.build_address(
         first_name: session[:address_first_name],
         last_name: session[:address_last_name],

@@ -57,11 +57,13 @@
         商品の詳細
       .category-box
         .sell-input-name
-          %label
-            カテゴリー
+          = f.label 'カテゴリー', class: 'listing-default__label'
           %span
             必須
-        = f.collection_select :category_id, Category.all, :id, :name, prompt: '選択してください'
+        .listing-select-wrapper
+          = f.select :category_id, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+        
+
       .brand-box
         .sell-input-name
           %label

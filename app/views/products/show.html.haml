@@ -7,22 +7,25 @@
       %i
         = icon('fa', 'angle-right')
     %li
-      ベビー・キッズ
+      = link_to "#" do
+        = @category.root.name
     %li
       %i
         = icon('fa', 'angle-right')
     %li
-      ベビー服(男女兼用) ~95cm
+      = link_to "#" do
+        = @category.parent.name
     %li
       %i
         = icon('fa', 'angle-right')
     %li
-      アウター
+      = link_to "do" do
+        = @category.name
     %li
       %i
         = icon('fa', 'angle-right')
     %li
-      product
+      = @product.name
 
 
 .product-details-wrapper
@@ -30,23 +33,21 @@
     = form_for '' do |f|
       .product-box
         %h1.product-name
-          product
+          = @product.name
         .product-box__photo
           %ul
             %li
-              = image_tag asset_path('pict/a007.png'), width: "560px"
+              = image_tag "#{@product.images.first.image}", class: :main_image, width: '560'
               %ul
-                %li
-                  = image_tag asset_path('pict/a007.png'), width: "75px", height: "75px"
-                %li
-                  = image_tag asset_path('pict/a001.png'), width: "75px", height: "75px"
-                %li
-                  = image_tag asset_path('pict/a003.png'), width: "75px", height: "75px"
+                - @product.images.each do |image|
+                  %li
+                    = image_tag "#{image.image}", class: :sub_image, height: '75', width: '75'
 
         .product-price-box
           .product-price-box__product-price
             %span
-              ¥10000
+              ¥
+              = @product.price
           .product-price-box__product-tax
             %span
               (税込)
@@ -54,7 +55,7 @@
               送料込み
 
         .product-description-box
-          ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+          = @product.description
 
         .product-information
           %table{border: "1", style: "border-collapse: collapse"}
@@ -62,39 +63,43 @@
               %th
                 出品者
               %td.product-information__table__td
-                hoge
+                = @product.user.nickname
             %tr
               %th
                 カテゴリー
               %td
                 = link_to "#" do
-                  ベビー・キッズ
+                  = @category.root.name
                 %br/
                 = link_to "#" do
-                  ベビー服(男女兼用)  ~95cm
+                  = @category.parent.name
                 %br/
                 = link_to "#" do
-                  アウター
+                  = @category.name
             %tr
               %th ブランド
               %td
+                = link_to "#" do
+                  = @product.brand
             %tr
               %th 商品のサイズ 
               %td
             %tr
               %th 商品の状態 
-              %td 未使用に近い
+              %td
+                = @product.condition.name
             %tr
               %th 配送料の負担
-              %td 送料込み（出品者負担）
+              %td
+                = @product.delivery_fee.name
             %tr
               %th 発送元地域 
               %td
-                = link_to "#" do
-                  岩手県
+                = @product.prefecture.name
             %tr
               %th 発送日の目安
-              %td 4-7日で発送
+              %td 
+                = @product.delivery_day.name
               
         .product-option
           .product-option__favorite

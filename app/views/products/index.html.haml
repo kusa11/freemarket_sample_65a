@@ -100,46 +100,22 @@
       .top__category__product-box__post
         新規投稿商品
       .top__category__product-box__lists
-        .top__category__product-box__lists__list
-          = link_to image_tag("pict/a007.png", class: "product-image"), "/products/show"
-          .top__category__product-box__lists__list__body
-            .top__category__product-box__lists__list__body__name
-              product
-            %ul.top__category__product-box__lists__list__body__details
-              %li
-                30000円
-              %li
-                = icon('fa', 'star')
-                0
-            %p
-              (税込)
-        .top__category__product-box__lists__list
-          = link_to image_tag("pict/a007.png", class: "product-image"), "/products/show"
-          .top__category__product-box__lists__list__body
-            .top__category__product-box__lists__list__body__name
-              product
-            %ul.top__category__product-box__lists__list__body__details
-              %li
-                30000円
-              %li
-                = icon('fa', 'star')
-                0
-            %p
-              (税込)
-        .top__category__product-box__lists__list
-          = link_to image_tag("pict/a007.png", class: "product-image"), "/products/show"
-          .top__category__product-box__lists__list__body
-            .top__category__product-box__lists__list__body__name
-              product
-            %ul.top__category__product-box__lists__list__body__details
-              %li
-                30000円
-              %li
-                = icon('fa', 'star')
-                0
-            %p
-              (税込)
-          
+        - @products.each do |product|
+          = link_to product_path(product.id) do
+            .top__category__product-box__lists__list
+              = image_tag "#{product.images.first.image}",class:"product-image"
+              .top__category__product-box__lists__list__body
+                .top__category__product-box__lists__list__body__name
+                  = product.name
+                %ul.top__category__product-box__lists__list__body__details
+                  %li
+                    = product.price
+                    円
+                  %li
+                    = icon('fa', 'star')
+                    0
+                %p
+                  (税込)
   .top__bland
     .top__bland__title
       ピックアップブランド
