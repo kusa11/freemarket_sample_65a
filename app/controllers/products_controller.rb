@@ -8,12 +8,8 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-    #セレクトボックスの初期値設定
-    @category_parent_array = ["選択してください"]
     #データベースから、親カテゴリーのみ抽出し、配列化
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
   end
 
   # 以下全て、formatはjsonのみ
@@ -34,12 +30,8 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      #セレクトボックスの初期値設定
-      @category_parent_array = ["選択してください"]
       #データベースから、親カテゴリーのみ抽出し、配列化
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
       render :new
     end
   end
