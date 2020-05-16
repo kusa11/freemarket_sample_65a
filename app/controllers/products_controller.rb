@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :show, :get_category_children, :get_category_grandchildren]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -38,7 +38,6 @@ class ProductsController < ApplicationController
 
 
   def show
-    @product = Product.find(params[:id])
     @category = @product.category
   end
 
@@ -54,12 +53,12 @@ class ProductsController < ApplicationController
   end
   
   private
-    def product_params
-      # ユーザー登録ができていない為ID１を仮置き
-      params.require(:product).permit(:name, :brand, :description, :condition_id, :delivery_fee_id, :prefecture_id, :delivery_day_id, :price, :delivery_day_id, :price, :category_id, images_attributes: [:image]).merge(user_id: 1)
-    end
+  def product_params
+    # ユーザー登録ができていない為ID１を仮置き
+    params.require(:product).permit(:name, :brand, :description, :condition_id, :delivery_fee_id, :prefecture_id, :delivery_day_id, :price, :delivery_day_id, :price, :category_id, images_attributes: [:image]).merge(user_id: 1)
+  end
 
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 end
