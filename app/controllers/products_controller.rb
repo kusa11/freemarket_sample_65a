@@ -51,6 +51,11 @@ class ProductsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @product.destroy
+    redirect_to root_path
+  end
   
   private
   def product_params

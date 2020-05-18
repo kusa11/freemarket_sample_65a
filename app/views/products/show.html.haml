@@ -53,9 +53,9 @@
               (税込)
             %span
               送料込み
-
-        .product-description-box
-          = @product.description
+        .product-Purchase
+          = link_to product_path(@product.id), method: :delete do
+            消去
 
         .product-information
           %table{border: "1", style: "border-collapse: collapse"}
