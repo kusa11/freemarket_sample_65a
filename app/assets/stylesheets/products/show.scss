@@ -101,6 +101,29 @@
           }
         }
       }
+      .product-edit {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 600;
+        margin: 24px 0 24px;
+        &__edit-btn {
+          background-color: $color-required;
+          width: 290px;
+          margin-right: 10px;
+          color: $color-form;
+          text-decoration: none;
+        }
+        &__delete-btn {
+          background-color: $color-required;
+          width: 290px;
+          margin-left: 10px;
+          color: $color-form;
+          text-decoration: none;
+        }
+      }
       .product-description-box {
         line-height: 1.5;
         font-size: 18px;
