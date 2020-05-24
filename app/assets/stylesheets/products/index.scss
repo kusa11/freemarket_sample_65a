@@ -203,7 +203,7 @@ ul {
 
   
   &__category {
-    padding: 80px 0 0;
+    padding: 80px 0 80px;
     background-color: #f8f8f8;
     height: 100%;
     &__title {
@@ -224,7 +224,7 @@ ul {
         width: 780px;
         margin: 0 auto;
         display: flex;
-        justify-content: flex-start;
+        flex-wrap: wrap;
         &__list {
           background-color: #fff;
           display: inline-block;
@@ -232,7 +232,7 @@ ul {
           height: 245px;
           display: inline-block;
           cursor: pointer;
-          margin: 0 20px;
+          margin: 40px 20px;
           .product-image {
             width: 220px;
             height: 150px;
@@ -266,71 +266,4 @@ ul {
       }
     }
   }
-  &__bland {
-    padding: 80px 0 0;
-    padding-bottom: 80px;
-    background-color: #f8f8f8;
-    height: 100%;
-    &__title {
-      text-align: center;
-      font-size: 28px;
-      line-height: 1.4;
-      font-weight: bold;
-    }
-    &__product-box {
-      &__post {
-        text-align: center;
-        font-size: 24px;
-        text-decoration: none;
-        color: #3CCACE;
-        margin-bottom: 26px;
-      }
-      &__lists {
-        width: 780px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: flex-start;
-        &__list {
-          background-color: #fff;
-          display: inline-block;
-          width: 220px;
-          height: 245px;
-          display: inline-block;
-          cursor: pointer;
-          margin: 0 20px;
-          .product-image {
-            width: 220px;
-            height: 150px;
-            overflow: hidden;
-            margin: 0;
-            z-index: auto;
-            object-fit: cover;
-          }
-          &__body {
-            color: #333;
-            padding: 16px;
-            &__name {
-              overflow: hidden;
-              line-height: 1.5;
-              font-size: 16px;
-              text-align: left;
-              font-weight: normal;
-            }
-            &__details {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              font-size: 16px;
-            }
-            p {
-              font-size: 10px;
-              text-align: left;
-            }
-          }
-        }
-      }
-    }
-  }
-
-
 }
