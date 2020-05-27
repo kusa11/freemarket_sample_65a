@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    if @product.save!
+    if @product.save
       redirect_to root_path
     else
       #データベースから、親カテゴリーのみ抽出し、配列化
