@@ -62,8 +62,7 @@ class ProductsController < ApplicationController
   
   private
   def product_params
-    # ユーザー登録ができていない為ID１を仮置き
-    params.require(:product).permit(:name, :brand, :description, :condition_id, :delivery_fee_id, :prefecture_id, :delivery_day_id, :price, :delivery_day_id, :price, :category_id, images_attributes: [:image]).merge(user_id: 1)
+    params.require(:product).permit(:name, :brand, :description, :condition_id, :delivery_fee_id, :prefecture_id, :delivery_day_id, :price, :delivery_day_id, :price, :category_id, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
   def set_product
