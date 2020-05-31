@@ -5,6 +5,7 @@
     .main__container
       .main__container__header
         電話番号の確認
+      = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
       = form_for @user, url: fourth_signup_index_path, method: :get, html: {class: 'main__container__form'} do |f|
         .main__container__form__input
           .main__container__form__input__title
@@ -20,3 +21,4 @@
           = link_to "電話番号の確認が必要な理由", "#", class: "main__container__form__text__right"
 .footer
   = render 'products/login-footer'
+= javascript_include_tag 'signup.js'

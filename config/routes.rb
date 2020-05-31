@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    sessions: 'users/sessions'
-    
+    sessions: 'users/sessions',
+    passwords: 'users/passwords'
 }
+
   root 'products#index'
   resources :products, only: [:index, :new, :show]
   resources :signup, only: [:create] do 

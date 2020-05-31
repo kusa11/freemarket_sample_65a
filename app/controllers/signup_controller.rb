@@ -1,6 +1,5 @@
 class SignupController < ApplicationController
-
-
+  
   def first
   end
 
@@ -19,10 +18,11 @@ class SignupController < ApplicationController
     session[:user_last_name] = user_params[:last_name]
     session[:user_first_name_kana] = user_params[:first_name_kana]
     session[:user_last_name_kana] = user_params[:last_name_kana]
-
+    
     @user = User.new
   end
 
+  
   def fourth
     session[:phone_number] = user_params[:phone_number]
     
@@ -31,7 +31,7 @@ class SignupController < ApplicationController
 
   def fifth
     @user = User.new
-    # @user.build_address
+    @address = @user.build_address
   end
 
 
@@ -49,30 +49,14 @@ class SignupController < ApplicationController
       last_name_kana: session[:user_last_name_kana],
       phone_number: session[:phone_number]
     )
-    if @user.save(
-      #  @address = @user.build_address(
-        first_name: session[:address_first_name],
-        last_name: session[:address_last_name],
-        first_name_kana: session[:address_first_name_kana],
-        last_name_kana: session[:address_last_name_kana],
-        phone_number: session[:address_phone_number],
-        post_number: session[:post_number],
-        prefecture: session[:prefecture],
-        city: session[:city],
-        address_number: session[:address_number],
-        building: session[:building],
-        # )      
-    )
-      else
+    @user.build_address(user_params[:address_attributes])
+    if @user.save
+      @user.address.user_id = @user.id
+      session[:user_id] = @user.id
+      redirect_to done_signup_index_path
+    else
         render first_signup_index_path
     end
-    # if @address.save
-    #     session[:id] = @user.id
-    #     redirect_to done_signup_index_path
-    # else
-    #     render first_signup_index_path
-    # end
-
   end
 
 
@@ -100,7 +84,7 @@ class SignupController < ApplicationController
       :first_name_kana,
       :last_name_kana,
       :post_number,
-      :prefecture,
+      :prefecture_id,
       :city,
       :address_number,
       :building,
