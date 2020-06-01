@@ -2,7 +2,7 @@
   .header
     = render 'products/login-header'
   .main
-    = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
+    = render partial: 'error-messages', locals: {user: @address, column: "nickname"}
     = form_for @user, url: signup_index_path, html: {class: 'main__container'} do |f|
       .main__container__header
         発送元・お届け先住所入力

@@ -6,7 +6,7 @@
       .main__container__header
         電話番号の確認
       = render partial: 'error-messages', locals: {user: @user, column: "nickname"}
-      = form_for @user, url: fourth_signup_index_path, method: :get, html: {class: 'main__container__form'} do |f|
+      = form_for @user, url: fifth_signup_index_path, method: :get, html: {class: 'main__container__form'} do |f|
         .main__container__form__input
           .main__container__form__input__title
             携帯電話の番号
