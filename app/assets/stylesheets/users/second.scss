@@ -2,6 +2,10 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   background-color: rgb(245, 245, 245);
   height: 1500px;
+  .field_with_errors {
+    display: contents;
+    // もしくは diplay: inline;
+  }
   .main {
     background-color: rgb(245, 245, 245);
     height: 90%;
