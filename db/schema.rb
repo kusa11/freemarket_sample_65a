@@ -18,14 +18,15 @@ ActiveRecord::Schema.define(version: 20200403025821) do
     t.string   "first_name_kana", null: false
     t.string   "last_name_kana",  null: false
     t.integer  "post_number",     null: false
-    t.string   "prefecture",      null: false
+    t.integer  "prefecture_id",   null: false
     t.string   "city",            null: false
     t.string   "address_number",  null: false
     t.string   "building",        null: false
     t.string   "phone_number",    null: false
-    t.integer  "user_id",         null: false
+    t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(version: 20200403025821) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "images", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"

@@ -2,7 +2,8 @@
   .header
     = render 'products/login-header'
   .main
-    = form_for '', url: { controller: :signup, action: :create }, method: :post, html: {class: 'main__container'} do |f|
+    = form_for @user, url: signup_index_path, html: {class: 'main__container'} do |f|
+      = render 'error_message3', model: f.object
       .main__container__header
         発送元・お届け先住所入力
       = f.fields_for :address, html: {class: 'main__container__form'} do |i|
@@ -34,13 +35,13 @@
           .main__container__form__pref__hissu
             必須
           .main__container__form__pref__require
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+            = i.collection_select :prefecture_id, Prefecture.all, :id, :name
           .main__container__form__city
             .main__container__form__city__title
               市区町村
             .main__container__form__city__require
               必須
-            = i.text_field :city, placeholder:"例)熊本県熊本市", class: "main__container__form__city__detail"
+            = i.text_field :city, placeholder:"例)熊本市", class: "main__container__form__city__detail"
           .main__container__form__addnumber
             .main__container__form__addnumber__title
               番地
@@ -63,3 +64,4 @@
             = f.submit "次へ進む" ,class: "main__container__form__btn__red"
   .footer
     = render 'products/login-footer'
+  = javascript_include_tag 'signup.js'

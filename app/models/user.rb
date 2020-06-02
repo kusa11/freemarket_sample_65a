@@ -4,38 +4,42 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :address
+  has_one :address 
+  accepts_nested_attributes_for :address
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,255}\z/i
-  VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
+  VALID_KATAKANA_REGEX =  /\A[\p{katakana}\p{blank}ー－]+\z/
   VALID_PHONE_REGEX = /\A\d{10}$|^\d{11}\z/
   VALID_POSTAL_CODE = /\A\d{3}-?\d{4}\z/
 
-  # second入力項目
-  validates :nickname, presence: true, length: { maximum: 20 }, on: :validates_second
-  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: 'は有効でありません。' }, on: :validates_second
-  validates :password, presence: true, length: { in: 7..255 }, format: { with: VALID_PASSWORD_REGEX, message: 'は255文字以下に設定して下さい'}, on: :validates_second
-  validates :birthday, presence: true, on: :validates_second
-  validates :last_name, presence: true, length: { maximum: 20 }, on: :validates_second
-  validates :first_name, presence: true, length: { maximum: 20 }, on: :validates_second
-  validates :last_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_second
-  validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_second
+  # ユーザー情報
+  validates :nickname, presence: true, length: {maximum: 20}, on: :validates_step1
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: 'は有効でありません。' }, on: :validates_step1
+  validates :password, presence: true, length: {minimum: 7, maximum: 30}, format: { with: VALID_PASSWORD_REGEX, message: 'は255文字以下に設定して下さい'}, on: :validates_step1
+  validates :birth_year, presence: true, on: :validates_step1
+  validates :birth_month, presence: true, on: :validates_step1
+  validates :birth_day, presence: true, on: :validates_step1
+  validates :last_name, presence: true, length: {maximum: 20}, on: :validates_step1
+  validates :first_name, presence: true, length: {maximum: 20}, on: :validates_step1
+  validates :last_name_kana, presence: true, length: {maximum: 20}, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step1
+  validates :first_name_kana, presence: true, length: {maximum: 20}, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step1
 
+  # 電話番号入力情報
+  validates :phone_number, null: false, format: { with: VALID_PHONE_REGEX, message: 'は有効でありません。'}, on: :validates_step2
 
-  # third入力項目
-  validates :tel, presence: true, format: { with: VALID_PHONE_REGEX, message: 'は有効でありません。'}, on: :validates_third
-
-  # fifth入力項目
-  validates :last_name, presence: true, length: { maximum: 20 }, on: :validates_step3
-  validates :first_name, presence: true, length: { maximum: 20 }, on: :validates_step3
-  validates :last_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
-  validates :first_name_kana, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
-  validates :zip, presence: true, length: { maximum: 8 }, format: { with: VALID_POSTAL_CODE, message: 'は有効でありません。' }, on: :validates_step3
-  validates :city_name, presence: true, length: { maximum: 50 }, on: :validates_step3
-  validates :block_name, presence: true, length: { maximum: 100 }, on: :validates_step3
-  validates :bill_name, length: { maximum: 100 }, on: :validates_step3
-  validates :tel, format: { with: VALID_PHONE_REGEX, message: 'は有効でありません。'}, allow_blank: true, on: :validates_step3
+  # アドレス情報
+  validates :first_name, presence: true, on: :validates_step3
+  validates :last_name, presence: true, on: :validates_step3
+  validates :first_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
+  validates :last_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
+  validates :post_number, presence: true, on: :validates_step3
+  validates :prefecture_id, presence: true, on: :validates_step3
+  validates :city, presence: true, on: :validates_step3
+  validates :address_number, presence: true, on: :validates_step3
+  validates :building, presence: true, on: :validates_step3
+  validates :phone_number, presence: true, format: { with: VALID_PHONE_REGEX, message: 'は有効でありません。'}, allow_blank: true, on: :validates_step3
+  
 
   protected
 
