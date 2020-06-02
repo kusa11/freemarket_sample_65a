@@ -1,9 +1,9 @@
 $(document).on('turbolinks:load', function() {
-  $("#CheckPW").change(function(){
+  $("#chkbox").change(function(){
     if($(this).prop('checked')){
-      $('#PWForm').attr('type','text');
+      $('#user_password').attr('type','text');
     }else{
-      $('#PWForm').attr('type','password');
+      $('#user_password').attr('type','password');
     }
   });
 });
