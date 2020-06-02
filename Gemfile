@@ -76,9 +76,6 @@ gem "font-awesome-sass"
 
 gem 'rspec-rails'
 gem 'factory_bot_rails'
-gem 'active_hash'
-
-gem "jquery-rails"
 
 gem 'rails-i18n'
 

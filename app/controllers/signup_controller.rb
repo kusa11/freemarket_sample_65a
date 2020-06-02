@@ -51,7 +51,6 @@ class SignupController < ApplicationController
       birth_month: session[:birth_month],
       birth_day: session[:birth_day],
     )
-
     @user.errors.full_messages
     render second_signup_index_path unless @user.valid?(:validates_step1)
 
@@ -91,21 +90,6 @@ class SignupController < ApplicationController
       address_number: session[:address_number],
       building: session[:building],
       phone_number: session[:phone_number]
-
-    if @user.save!(
-      #  @address = @user.build_address(
-        first_name: session[:address_first_name],
-        last_name: session[:address_last_name],
-        first_name_kana: session[:address_first_name_kana],
-        last_name_kana: session[:address_last_name_kana],
-        phone_number: session[:address_phone_number],
-        post_number: session[:post_number],
-        prefecture: session[:prefecture],
-        city: session[:city],
-        address_number: session[:address_number],
-        building: session[:building],
-        # )      
-
     )
     @user.address = @address
     render fifth_signup_index_path unless @address.valid?(:validates_step3)
@@ -113,8 +97,36 @@ class SignupController < ApplicationController
 
 
   def create
-    
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      password_confirmation: session[:password_confirmation],
+      last_name: session[:last_name],
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
+      phone_number: session[:phone_number],
+      birth_year: session[:birth_year],
+      birth_month: session[:birth_month],
+      birth_day: session[:birth_day],
+    )
+
+    @user.build_address(
+      last_name: session[:last_name],
+      first_name: session[:first_name],
+      last_name_kana: session[:last_name_kana],
+      first_name_kana: session[:first_name_kana],
+      post_number: session[:post_number],
+      prefecture_id: session[:prefecture_id],
+      city: session[:city],
+      address_number: session[:address_number],
+      building: session[:building],
+      phone_number: session[:phone_number]
+    ) 
+
     @user.build_address(user_params[:address_attributes])
+  
     if @user.save
       @user.address.user_id = @user.id
       session[:user_id] = @user.id
@@ -125,9 +137,9 @@ class SignupController < ApplicationController
   end
 
   def done
-    sign_in User.find(session[:id]) unless user_signed_in?
+    # sign_in User.find(session[:id]) unless user_signed_in?
 
-    redirect_to new_user_card_path(session[:id])
+    # redirect_to new_user_card_path(session[:id])
   end
 
 

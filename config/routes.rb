@@ -6,10 +6,6 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
 }
 
-
-    sessions: 'users/sessions'
-  }
-
   root 'products#index'
   resources :products, only: [:index, :new, :create, :show, :destroy] do
     collection do
