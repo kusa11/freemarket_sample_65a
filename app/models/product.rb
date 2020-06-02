@@ -12,5 +12,5 @@ class Product < ApplicationRecord
 
   validates :name, :description, :condition_id, :price,
             :delivery_fee_id, :prefecture_id, :delivery_day_id,
-            :category_id, :user_id, presence: true
+            :category_id, :user_id, :images, presence: true
 end

@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', ()=> {
+$(function(){
   if ($('#new_product')[0]) {
     // 画像用のfile_fieldを生成する関数
     const buildFileField = (index)=> {

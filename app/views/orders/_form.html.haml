@@ -1,0 +1,41 @@
+.content
+  .buy-head
+    購入内容の確認
+  .product-content
+    .product-content__inner
+      .product-content__inner__image
+        = image_tag "pict/a001.png", height: '80', width: '80'
+      .product-content__inner__information
+        .product-content__inner__information__product-name
+          商品名
+        .product-content__inner__information__product-price
+          %span
+            ¥
+            20000
+          %span
+            (税込)
+          %span
+            送料込み
+  .buy-content
+    .buy-content__box
+      .buy-content__box__price
+        .buy-content__box__price__cell
+          支払い金額
+        .buy-content__box__price__pay
+          ¥30,000
+      .buy-content__box__method
+        %p.buy-content__box__method__label
+          支払い方法
+        .buy-content__box__method__card
+          クレジットカード登録
+      .buy-content__box__area
+        %p.buy-content__box__area__delivery
+          配送先
+        .buy-content__box__area__info
+          %ul
+            %li 〒000−0000
+            %li 東京都 マンション 001号室
+            %li 名前
+      .buy-content__box__buy
+        .buy-content__box__buy__submit
+          購入する
