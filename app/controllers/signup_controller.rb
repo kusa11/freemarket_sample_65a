@@ -51,7 +51,6 @@ class SignupController < ApplicationController
       birth_month: session[:birth_month],
       birth_day: session[:birth_day],
     )
-
     @user.errors.full_messages
     render second_signup_index_path unless @user.valid?(:validates_step1)
 
@@ -91,21 +90,6 @@ class SignupController < ApplicationController
       address_number: session[:address_number],
       building: session[:building],
       phone_number: session[:phone_number]
-
-    if @user.save!(
-      #  @address = @user.build_address(
-        first_name: session[:address_first_name],
-        last_name: session[:address_last_name],
-        first_name_kana: session[:address_first_name_kana],
-        last_name_kana: session[:address_last_name_kana],
-        phone_number: session[:address_phone_number],
-        post_number: session[:post_number],
-        prefecture: session[:prefecture],
-        city: session[:city],
-        address_number: session[:address_number],
-        building: session[:building],
-        # )      
-
     )
     @user.address = @address
     render fifth_signup_index_path unless @address.valid?(:validates_step3)
