@@ -1,1 +1,8 @@
-= render 'layouts/header' 
+= render 'products/top-header'
+
+.main
+  = render partial: 'users/section/mypage-list'
+  .main__right
+    = render partial: 'users/section/mypage'
+
+= render 'products/top-footer'
