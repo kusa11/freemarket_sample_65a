@@ -37,7 +37,7 @@ class User < ApplicationRecord
   validates :first_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
   validates :last_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
   validates :post_number, presence: true, on: :validates_step3
-  validates :prefecture_id, presence: true, on: :validates_step3
+  validates :prefecture_id, presence: true, on: :validates_sttep3
   validates :city, presence: true, on: :validates_step3
   validates :address_number, presence: true, on: :validates_step3
   validates :building, presence: true, on: :validates_step3
