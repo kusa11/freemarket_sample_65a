@@ -1,0 +1,136 @@
+.content
+  = form_for @product do |f|
+    .upload-content
+      .sell-input-name
+        %label
+          出品画像
+        %span
+          必須
+      .description
+        最大10枚までアップロードできます
+
+      -# #image-box
+      -#   #previews.previews
+      -#     - if @product.persisted?
+      -#       - @product.images.each_with_index do |image, i|
+      -#         .preview{"data-index" => i}
+      -#           = image_tag image.image.url, width: "116", height: '116', data: {index: i}
+      -#           .delete-btn.js-remove{"data-index" => i} 削除
+      -#     = label_tag :image, "クリックしてファイルをアップロード", class: "js-file_label previews__new-label"
+      -#   .js-file_input
+      -#     = f.fields_for :images do |image|
+      -#       .js-file_group
+      -#         = image.file_field :image, data:{ index: image.index }, class: 'js-file'
+      -#         - if @product.persisted?
+      -#           = image.hidden_field :_destroy, class: 'hidden-check', data:{destroy: image.index}
+      -#           = image.hidden_field :id
+      -#     - if @product.persisted?
+      -#       .js-file_group
+      -#         = file_field_tag :image, name: "product[images_attributes][#{@product.images.length}][image]", data:{ index: @product.images.length }, class: 'js-file', id: "product_images_attributes_#{@product.images.length}_image"
+
+    .product-content
+      .product-name
+        .sell-input-name
+          %label
+            商品名
+          %span
+            必須
+        = f.text_field :name, class: "product-name__product-name-input", placeholder: "40文字まで", maxlength: "40"
+      .product-description
+        .sell-input-name
+          %label
+            商品の説明
+          %span
+            必須
+        = f.text_area :description, class: "product-description__text-box",id: "js-count", rows: "10", cols: "100", placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。".html_safe, maxlength: "1000"
+        .counter
+          %span.show-count> 0
+          %p /1000
+        %script{:src => "https://code.jquery.com/jquery-3.3.1.js"}
+          :cdata
+        %script{:src => "js/app.js"}
+          :cdata
+
+
+    .details-content
+      %h3
+        商品の詳細
+      .category-box
+        .sell-input-name
+          = f.label 'カテゴリー', class: 'listing-default__label'
+          %span
+            必須
+        .listing-select-wrapper--edit
+          .listing-select-wrapper--edit__parent
+            = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected:  @product.category.parent.parent_id}, {class: 'listing-select-wrapper--edit__parent--select', id: 'parent_category_edit', name: "" }
+          .listing-select-wrapper--edit__child
+            = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper--edit__child--select', id: 'child_category_edit', name: "" }
+          .listing-select-wrapper--edit__grandchild
+            = f.collection_select :category_id,@product.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper--edit__grandchild--select', id: 'grandchild_category_edit', name: "product[category_id]" }
+            
+      .brand-box
+        .sell-input-name
+          %label
+            ブランド
+          %span.any
+            任意
+        = f.text_field :brand, class: "brand-box__brand-input-box", placeholder: "例) シャネル"
+      .condition-box
+        .area-box
+          .sell-input-name
+            %label
+              商品の状態
+            %span
+              必須
+          = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択してください"
+
+    .delivery-content
+      %h3
+        配送について
+      .delivery_fee-box
+        .sell-input-name
+          %label
+            配送料の負担
+          %span
+            必須
+        = f.collection_select :delivery_fee_id, DeliveryFee.all, :id, :name, prompt: "選択してください"
+      .delivery_area-box
+        .sell-input-name
+          %label
+            発送元の地域
+          %span
+            必須
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択してください"
+
+      .delivery_day-box
+        .sell-input-name
+          %label
+            発送元の日数
+          %span
+            必須
+        = f.collection_select :delivery_day_id, DeliveryDay.all, :id, :name, prompt: "選択してください"
+
+    .content-bottom
+      %h3
+        価格(300〜9,999,999)
+      .price-box
+        .price-box__first
+          .sell-input-name
+            %label
+              販売価格
+            %span
+              必須
+          .price-box__first__mark
+            ¥
+          = f.text_field :price, class: "price-box__first__money", placeholder: "0"
+        .price-box__second
+          .price-box__second__second-left 販売手数料 (10%)
+          .price-box__second__second-right —
+        .price-box__third
+          .price-box__third__third-left 販売利益
+          .price-box__third__third-right —
+      .sell-btn
+        = f.submit "変更する", class: "sell-btn__sent"
+        .sell-btn__back もどる 
+      .notes
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
