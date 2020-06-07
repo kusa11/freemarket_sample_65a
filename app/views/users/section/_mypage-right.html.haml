@@ -1,0 +1,73 @@
+.main__right-mypage
+  =link_to "#", class: "mypage-icon" do
+    = image_tag("/.jpg", class: "mypage-img")
+    %p.mypage-name
+    .mypage-evaluation-exhibit
+      %p.mypage-evaluation
+        評価
+      %p.mypage-evaluation-count
+        0
+      %p.mypage-exhibit
+        出品数
+      %p.mypage-exhibit-count
+        0
+.main__right-content-tab
+  .link-tab
+    =link_to "", class: "content-tab-tab btn action-1" do
+      .border-red-1.line-up-1
+      %p.content-title
+        お知らせ
+  .link-tab
+    =link_to "", class: "content-tab-tab btn" do
+      .border-red-1.line-down-1
+      %p.content-title
+        やることリスト
+.main__right-content-list.content-1.show-1
+  .main__right-content-tab-list-each
+    =link_to "#", class: "content-tab-list-tag btn" do
+      = image_tag("/", class: "content-tab-list-image")
+      %p.content-tab-list-message
+        7日後、P200還元クーポンの有効期限が切れます。
+      = fa_icon 'angle-right', class: 'content-tab-select-icon'
+  .main__right-content-tab-list-each
+    =link_to "#", class: "content-tab-list-tag btn" do
+      = image_tag("/", class: "content-tab-list-image")
+      %p.content-tab-list-message
+        事務局から個別メッセージ
+      = fa_icon 'angle-right', class: 'content-tab-select-icon'
+  .main__right-content-tab-list-each
+    =link_to "#", class: "content-tab-list-tag btn" do
+      = image_tag("/", class: "content-tab-list-image")
+      %p.content-tab-list-message
+        ＜おうちエンタメ＞売って買って最大500円分のポイントが貰える。
+      = fa_icon 'angle-right', class: 'content-tab-select-icon'
+  .main__right-content-tab-list-each
+    =link_to "#", class: "content-tab-list-tag btn" do
+      = image_tag("/", class: "content-tab-list-image")
+      %p.content-tab-list-message
+        ＜今月使い過ぎたけど買いたい＞FURIMAペイスマート払いがお得。
+      = fa_icon 'angle-right', class: 'content-tab-select-icon'
+  .main__right-content-tab-list-each
+    =link_to "#", class: "content-tab-list-tag btn" do
+      = image_tag("/", class: "content-tab-list-image")
+      %p.content-tab-list-message
+        事務局から個別メッセージ「ログイン通知」
+      = fa_icon 'angle-right', class: 'content-tab-select-icon'
+  .main__right-content-tab-list-show
+    =link_to "一覧を見る", "#", class: "main__right-content-tab-list-show-btn btn"
+.main__right-tab-list.content-1.hide-1
+  .main__right-tab-list-each
+.buy-product
+  %p.buy-product-title
+    購入した商品
+.transaction
+  =link_to "", class: "transaction-now transaction-tab btn active-2" do
+    .border-red-2.line-up-2
+    %p.transaction-now-title
+      取引中
+  =link_to "", class: "transaction-past transaction-tab btn" do
+    .border-red-2.line-down-2
+    %p.transaction-past-title
+      過去の取引
+.buy-products-now-list.content-2.show-2
+.buy-products-past-list.content-2.hide-2
