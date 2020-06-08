@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     member do
       get 'profile'
       get 'logout'
+      get 'credit_add'
+      get 'credit_edit'
     end
   end
 

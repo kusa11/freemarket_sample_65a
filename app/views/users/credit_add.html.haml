@@ -1,0 +1,22 @@
+= render 'products/top-header'
+
+.main
+  = render partial: 'users/section/mypage-list'
+  .main__right
+    .credit-tab
+      .credit-title
+        支払い方法
+      .credit-edit
+        .credit-list
+          %p.credit-list-title クレジットカード一覧
+        .credit-create
+          =link_to  credit_edit_user_path, class: "credit-create-btn" do
+            =fa_icon 'credit-card', class: 'credit-card'
+            クレジットカードを追加する
+        .credit-line
+        =link_to "/", class: "credit-method" do
+          支払い方法について
+          =fa_icon 'angle-right', class: 'credit-angle-right'
+
+= render partial: 'users/section/exhibit-button'
+= render 'products/top-footer'
