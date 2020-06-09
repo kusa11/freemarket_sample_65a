@@ -1,7 +1,7 @@
 = render 'products/top-header'
 
 .main
-  = render partial: 'users/section/mypage-list'
+  = render 'users/section/mypage-list'
   .main__right
     .credit-tab
       .credit-title
@@ -18,5 +18,5 @@
           支払い方法について
           =fa_icon 'angle-right', class: 'credit-angle-right'
 
-= render partial: 'users/section/exhibit-button'
+= render 'users/section/exhibit-button'
 = render 'products/top-footer'

@@ -1,7 +1,7 @@
 = render 'products/top-header'
 
 .main
-  = render partial: 'users/section/mypage-list'
+  = render 'users/section/mypage-list'
   .main__right
     .signup-view-1page
       %section.signup-view-block
@@ -38,5 +38,5 @@
               = f.submit '次へ進む'
             .mail-pass-white-tab
 
-= render partial: 'users/section/exhibit-button'
+= render  'users/section/exhibit-button'
 = render 'products/top-footer'
