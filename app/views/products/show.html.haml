@@ -60,7 +60,13 @@
             .product-edit__edit-btn
               商品の編集
             = link_to "商品を削除", product_path(@product.id), method: :delete, class: "product-edit__delete-btn"
-
+        - else
+          - if @product_id.present?
+            .product-sold-btn
+              SOLD OUT
+          - else
+            .product-purchase
+              = link_to "購入画面に進む", new_product_order_path(product_id: @product), class: "product-purchase__purchase-btn"
         .product-information
           %table{border: "1", style: "border-collapse: collapse"}
             %tr

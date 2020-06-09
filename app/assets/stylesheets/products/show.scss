@@ -124,6 +124,20 @@
           text-decoration: none;
         }
       }
+      .product-purchase {
+        display: flex;
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 600;
+        margin: 24px 0 24px;
+        &__purchase-btn {
+          background-color: $color-required;
+          width: 700px;
+          color: $color-form;
+          text-decoration: none;
+        }
+      }
       .product-description-box {
         line-height: 1.5;
         font-size: 18px;
