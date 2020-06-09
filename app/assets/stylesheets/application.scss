@@ -1,7 +1,10 @@
 
-
-
 @import "./variables";
+@import "mypage/mypage-show";
+@import "mypage/logout";
+@import "mypage/credit-new";
+@import "mypage/credit-edit";
+@import "mypage/credit-method";
 @import "login-header";
 @import "login-footer";
 @import "validation-engine";
@@ -21,6 +24,7 @@
 @import "users/fifth";
 @import "users/done";
 @import "orders/new"
+
 
 
 
