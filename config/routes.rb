@@ -12,7 +12,12 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :orders, only: [:new]
+    resources :orders, only: [:new] do
+      collection do
+        post 'pay', to: 'orders#pay'
+        get 'done', to: 'orders#done'
+      end
+    end
   end
   resources :signup, only: [:create] do 
     collection do
