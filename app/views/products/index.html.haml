@@ -103,6 +103,10 @@
         - @products.each do |product|
           = link_to product_path(product.id) do
             .top__category__product-box__lists__list
+              - if product.order_ids.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
               = image_tag "#{product.images.first.image}",class:"product-image"
               .top__category__product-box__lists__list__body
                 .top__category__product-box__lists__list__body__name

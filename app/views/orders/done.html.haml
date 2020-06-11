@@ -8,6 +8,7 @@
     .buy-content__item__inner
       .buy-item-main
         .buy-item-image
+          = image_tag @image.image.url, alt:"商品画像", class: "transaction-pay__item-image"
         .buy-item-detail
           .buy-item-name
             = @product.name

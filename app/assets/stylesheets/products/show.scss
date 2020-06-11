@@ -124,6 +124,15 @@
           text-decoration: none;
         }
       }
+      .product-sold-btn {
+        font-size: 24px;
+        line-height: 60px;
+        text-align: center;
+        font-weight: 600;
+        margin: 24px 0 24px;
+        background: #888;
+        color: $color-form;
+      }
       .product-purchase {
         display: flex;
         font-size: 24px;
@@ -280,7 +289,6 @@
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    padding-inline-start: 40px;
     list-style: none;
   }
   li {

@@ -233,6 +233,23 @@ ul {
           display: inline-block;
           cursor: pointer;
           margin: 40px 20px;
+          .items-box_photo__sold{
+            width: 0;
+            height: 0;
+            border-top: 50px solid $color-required;
+            border-right: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 50px solid $color-required;
+            position: absolute;
+            &__inner{
+              transform: rotate(-45deg);
+              font-size: 26px;
+              margin:-20px 0px 0px -45px;
+              color: #fff;
+              letter-spacing: 2px;
+              font-weight: 600;
+            }
+          }
           .product-image {
             width: 220px;
             height: 150px;

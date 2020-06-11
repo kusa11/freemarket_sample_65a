@@ -1,9 +1,11 @@
 class OrdersController < ApplicationController
 
   require 'payjp'
+  before_action :set_card, only: [:new, :pay]
   before_action :set_product
 
   def new
+    @image = @product.images.first
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to controller: "cards", action: "new"
@@ -26,10 +28,15 @@ class OrdersController < ApplicationController
   end
 
   def done
-    @product_purchaser= Product.find(params[:product_id])
+    @image = @product.images.first
+    Order.create(product_id: @product.id, user_id: current_user.id)
   end
 
   private
+
+  def set_card
+    @set_card = Card.where(user_id: current_user.id)
+  end
 
   def set_product
     @product = Product.find(params[:product_id])
