@@ -2,7 +2,8 @@
 .details-header
   %ul
     %li
-      %a FURIMA
+      %a 
+        = link_to "FURIMA","/"
     %li
       %i
         = icon('fa', 'angle-right')
@@ -53,6 +54,7 @@
               (税込)
             %span
               送料込み
+
         - if user_signed_in? && current_user.id == @product.user_id
           .product-edit
             -# 編集機能実装時に使用してください
@@ -68,6 +70,10 @@
           - else
             .product-purchase
               = link_to "購入画面に進む", new_product_order_path(product_id: @product), class: "product-purchase__purchase-btn"
+
+        .product-description-box
+          = @product.description
+
         .product-information
           %table{border: "1", style: "border-collapse: collapse"}
             %tr

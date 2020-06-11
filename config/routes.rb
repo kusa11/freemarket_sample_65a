@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update] do
     member do
       get 'profile'
+      get 'logout'
+      get 'credit_add'
+      get 'credit_edit'
     end
   end
   resources :cards, only: [:new, :show] do

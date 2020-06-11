@@ -4,7 +4,7 @@
 }
 .sell-wrapper {
   background-color: $color-background;
-  font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+
   .content {
     background-color: $color-form;
     width: 700px;
@@ -214,7 +214,7 @@
       margin-bottom: 32px;
       &__sent {
         width: 360px;
-        background-color: #ea352d;
+        background-color: $color-required;
         color: $color-form;
         margin-bottom: 24px;
         font-size: 17px;

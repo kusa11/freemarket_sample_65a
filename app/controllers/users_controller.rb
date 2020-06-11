@@ -5,6 +5,15 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+  def logout
+  end
+
+  def credit_add
+  end
+
+  def credit_edit
+  end
   
   private
 

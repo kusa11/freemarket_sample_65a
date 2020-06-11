@@ -17,7 +17,7 @@ class Address < ApplicationRecord
   validates :last_name, presence: true, on: :validates_step3, format: { with: VALID_kanji, message: 'は有効でありません。' }, on: :validates_step3
   validates :first_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
   validates :last_name_kana, presence: true, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}, on: :validates_step3
-  validates :post_number, presence: true, format: { with: /\A\d{3}\-?\d{4}\z/, message: 'ハイフンなしで入力して下さい。' }, on: :validates_step3
+  validates :post_number, presence: true, format: { with: /\A\d{3}\-?\d{4}\z/, message: 'はハイフンなしで入力して下さい。' }, on: :validates_step3
   validates :prefecture_id, presence: true, on: :validates_sttep3
   validates :city, presence: true, on: :validates_step3
   validates :address_number, presence: true, on: :validates_step3
