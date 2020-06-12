@@ -81,4 +81,4 @@ gem 'rails-i18n'
 
 gem 'ancestry'
 gem "font-awesome-rails"
-
+gem 'payjp'

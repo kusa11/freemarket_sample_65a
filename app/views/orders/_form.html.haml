@@ -27,7 +27,13 @@
         %p.buy-content__box__method__label
           支払い方法
         .buy-content__box__method__card
-          クレジットカード登録
+          - if @default_card_information.blank?
+            %br /
+          - else
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
       .buy-content__box__area
         %p.buy-content__box__area__delivery
           配送先
@@ -37,5 +43,5 @@
             %li 東京都 マンション 001号室
             %li 名前
       .buy-content__box__buy
-        .buy-content__box__buy__submit
-          購入する
+        = form_tag(action: :pay, method: :post) do
+          %button.buy-button{type:"submit"} 購入する

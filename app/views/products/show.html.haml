@@ -38,7 +38,7 @@
         .product-box__photo
           %ul
             %li
-              = image_tag "#{@product.images.first.image}", class: :main_image, width: '560'
+              = image_tag "#{@product.images.first.image}", class: :main_image
               %ul
                 - @product.images.each do |image|
                   %li
@@ -62,6 +62,14 @@
             .product-edit__edit-btn
               商品の編集
             = link_to "商品を削除", product_path(@product.id), method: :delete, class: "product-edit__delete-btn"
+        - else
+          - sold = Order.find_by(product_id: params[:id])    
+          - if sold != nil
+            .product-sold-btn
+              売り切れました
+          - else
+            .product-purchase
+              = link_to "購入画面に進む", new_product_order_path(product_id: @product), class: "product-purchase__purchase-btn"
 
         .product-description-box
           = @product.description
