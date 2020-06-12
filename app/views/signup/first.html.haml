@@ -6,13 +6,13 @@
     .main__content
       .main__content__line
         = link_to "/signup/second", class: "main__content__line__btn main__content__line__btn--mail" do
-          = icon('far', 'envelope', class: "main__content__line__btn--mail")
+          = fa_icon 'envelope', class: "main__content__line__btn--mail"
           メールアドレスで登録する
         = link_to "https://www.facebook.com/", class: "main__content__line__btn main__content__line__btn--facebook" do
-          = icon('fab', 'facebook-square', class: "main__content__line__btn--facebook")
+          = fa_icon 'facebook-square', class: "main__content__line__btn--facebook"
           Facebookで登録する
         = link_to "https://www.google.com/", class: "main__content__line__btn main__content__line__btn--google" do
-          = icon('fab', 'google', class: "main__content__line__btn--icon")
+          = fa_icon 'google', class: "main__content__line__btn--icon"
           Googleで登録する
   .footer
     = render 'products/login-footer'

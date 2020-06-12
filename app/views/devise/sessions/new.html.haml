@@ -10,10 +10,10 @@
           新規会員登録
       .main__login__inner
         = link_to "#", class: "main__login__inner__btn main__login__inner__btn--facebook" do
-          = icon('fab', 'facebook-square',class:'icon')
+          = fa_icon 'facebook-square',class:'icon'
           Facebookでログイン
         = link_to "#", class: "main__login__inner__btn main__login__inner__btn--google" do
-          = icon('fab', 'google',class:'icon')
+          = fa_icon 'google',class:'icon'
           Googleでログイン
       .main__login__bottom
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|

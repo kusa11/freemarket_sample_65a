@@ -17,7 +17,7 @@ class User < ApplicationRecord
   # ユーザー情報
   validates :nickname, presence: true, length: {maximum: 20}, on: :validates_step1
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: 'は有効でありません。' }, on: :validates_step1
-  validates :password, presence: true, length: {minimum: 7, maximum: 30}, format: { with: VALID_PASSWORD_REGEX, message: 'は255文字以下に設定して下さい'}, on: :validates_step1
+  validates :password, presence: true, length: {minimum: 7, maximum: 30}, format: { with: VALID_PASSWORD_REGEX, message: 'は30文字以下に設定して下さい'}, on: :validates_step1
   validates :birth_year, presence: true, on: :validates_step1
   validates :birth_month, presence: true, on: :validates_step1
   validates :birth_day, presence: true, on: :validates_step1
