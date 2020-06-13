@@ -1,6 +1,6 @@
 .body-register2
   .header
-    = render 'products/login-header'
+    = render 'signup/progress/header3'
   .main
     = form_for @user, url: signup_index_path, html: {class: 'main__container'} do |f|
       = render 'error_message3', model: f.object
