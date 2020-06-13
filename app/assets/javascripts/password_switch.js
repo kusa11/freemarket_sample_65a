@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
   $("#chkbox_CheckPW").change(function(){
     if($(this).prop('checked')){
       $('#PWForm').attr('type','text');
