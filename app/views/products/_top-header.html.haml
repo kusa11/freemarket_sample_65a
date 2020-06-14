@@ -14,7 +14,7 @@
           ブランド
       .top-header__menu__right
         - if user_signed_in?
-          = link_to "マイページ", "/users/maypage", class: "top-header__menu__right__btn"
+          = link_to "マイページ", "/users/mypage", class: "top-header__menu__right__btn"
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "top-header__menu__right__btn"
         - else
           = link_to "ログイン", new_user_session_path, class: "top-header__menu__right__btn"
