@@ -130,6 +130,8 @@ class SignupController < ApplicationController
     if @user.save
       @user.address.user_id = @user.id
       session[:user_id] = @user.id
+      sign_in(@user)
+      # bypass_sign_in(@user)
       redirect_to done_signup_index_path
     else
         render first_signup_index_path
