@@ -61,8 +61,8 @@
           %span
             必須
         .listing-select-wrapper
-          = f.select :category_id, @category_parent_array, { prompt: "選択してください" }, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-
+          .listing-select-wrapper__parent
+            = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください"}, {class: 'listing-select-wrappert__parent--select', id: 'parent_category', name: "" }
       .brand-box
         .sell-input-name
           %label
