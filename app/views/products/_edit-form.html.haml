@@ -47,6 +47,7 @@
           %span.show-count> 0
           %p /1000
 
+
     .details-content
       %h3
         商品の詳細
@@ -57,12 +58,12 @@
             必須
         .listing-select-wrapper
           .listing-select-wrapper__parent
-            = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください"}, {class: 'listing-select-wrappert__parent--select', id: 'parent_category', name: "" }
-            - if @product.persisted?
-              .listing-select-wrapper__child
-                = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper__child--select', id: 'child_category', name: "" }
-              .listing-select-wrapper__grandchild
-                = f.collection_select :category_id,@product.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper__grandchild--select', id: 'grandchild_category', name: "product[category_id]" }
+            = f.collection_select :category_id, Category.roots, :id, :name ,{prompt: "選択してください", selected: @product.category.parent.parent_id}, {class: 'listing-select-wrappert__parent--select', id: 'parent_category', name: "" }
+          .listing-select-wrapper__child
+            = f.collection_select :category_id, @product.category.parent.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.parent_id}, {class: 'listing-select-wrapper__child--select', id: 'child_category', name: "" }
+          .listing-select-wrapper__grandchild
+            = f.collection_select :category_id,@product.category.parent.children, :id, :name ,{prompt: "選択してください", selected: @product.category.id}, {class: 'listing-select-wrapper__grandchild--select', id: 'grandchild_category', name: "product[category_id]" }
+              
       .brand-box
         .sell-input-name
           %label
@@ -125,8 +126,7 @@
           .price-box__third__third-left 販売利益
           .price-box__third__third-right —
       .sell-btn
-        = f.submit "出品する", class: "sell-btn__sent"
-        .sell-btn__back 
-          = link_to "もどる","/"
+        = f.submit "変更する", class: "sell-btn__sent"
+        .sell-btn__back もどる 
       .notes
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
