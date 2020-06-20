@@ -1,5 +1,4 @@
 $(function(){
-  if ($('#new_product')[0]) {
     // 画像用のfile_fieldを生成する関数
     const buildFileField = (index)=> {
       const html = `<div class="js-input">
@@ -17,7 +16,9 @@ $(function(){
                     </div>`;
       return html;
     }
-
+  // }
+  
+  
     // file_fieldのnameに動的なindexをつける為の配列
     lastIndex = $('input[type="file"]:last').data('index');
     let fileNumbers = [lastIndex + 1];
@@ -53,6 +54,7 @@ $(function(){
 
     // 削除ボタンを押した時のイベント
     $('#previews').on('click', '.js-remove', function() {
+      
       targetIndex = this.dataset.index
       hiddenCheck = document.getElementById(`product_images_attributes_${targetIndex}__destroy`)
       if (hiddenCheck) {
@@ -69,7 +71,6 @@ $(function(){
         $('.js-file_label').show();
       }
     })
-  }
 });
 
 $(function(){
