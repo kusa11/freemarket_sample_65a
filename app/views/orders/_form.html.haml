@@ -10,8 +10,7 @@
           = @product.name
         .product-content__inner__information__product-price
           %span
-            ¥
-            = @product.price
+            = "¥#{@product.price}"
           %span
             = @product.delivery_fee.name
   .buy-content
@@ -20,7 +19,8 @@
         .buy-content__box__price__cell
           支払い金額
         .buy-content__box__price__pay
-          ¥30,000
+          %span
+            = "¥#{@product.price}"
       .buy-content__box__method
         %p.buy-content__box__method__label
           支払い方法
