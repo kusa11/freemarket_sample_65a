@@ -62,9 +62,12 @@
           - if sold != nil
             .product-sold-btn
               売り切れました
-          - else
+          - elsif user_signed_in? && @product.user_id != current_user.id
             .product-purchase
               = link_to "購入画面に進む", new_product_order_path(product_id: @product), class: "product-purchase__purchase-btn"
+          -else
+            .product-purchase
+              = link_to "購入画面に進む", new_user_session_path, class: "product-purchase__purchase-btn"
 
         .product-description-box
           = @product.description
