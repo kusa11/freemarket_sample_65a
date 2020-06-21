@@ -1,10 +1,12 @@
 .bread-crumbs {
+  width: 100%;
+  height: 55px;
+  background-color: #fff;
+  border-top: 1px solid $color-tableback;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
-  border-top: 1px solid #eee;
-  background: #fff;
-  box-shadow: 0 3px 3px 0 rgba(112, 38, 38, 0.16);
-  padding: 16px;
-  text-decoration: none;
+  padding: 0 200px;
+  line-height: 55px;
   a {
     display: inline-block;
     font-size: 14px;

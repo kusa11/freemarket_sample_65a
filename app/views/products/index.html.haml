@@ -101,7 +101,7 @@
         新規投稿商品
       .top__category__product-box__lists
         - @products.each do |product|
-          = link_to product_path(product.id) do
+          = link_to product_path(product.id), class: 'btn' do
             .top__category__product-box__lists__list
               - if product.order_ids.present? 
                 .items-box_photo__sold
