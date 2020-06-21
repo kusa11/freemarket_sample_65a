@@ -4,25 +4,23 @@
   .product-content
     .product-content__inner
       .product-content__inner__image
-        = image_tag "pict/a001.png", height: '80', width: '80'
+        = image_tag "#{@product.images.first.image}", class: :main_image, height: '80', width: '80'
       .product-content__inner__information
         .product-content__inner__information__product-name
-          商品名
+          = @product.name
         .product-content__inner__information__product-price
           %span
-            ¥
-            20000
+            = "¥#{@product.price}"
           %span
-            (税込)
-          %span
-            送料込み
+            = @product.delivery_fee.name
   .buy-content
     .buy-content__box
       .buy-content__box__price
         .buy-content__box__price__cell
           支払い金額
         .buy-content__box__price__pay
-          ¥30,000
+          %span
+            = "¥#{@product.price}"
       .buy-content__box__method
         %p.buy-content__box__method__label
           支払い方法
@@ -38,10 +36,21 @@
         %p.buy-content__box__area__delivery
           配送先
         .buy-content__box__area__info
+          - address = current_user.address
           %ul
-            %li 〒000−0000
-            %li 東京都 マンション 001号室
-            %li 名前
+            %li
+              = "〒#{address.post_number}"
+            %li
+              = address.prefecture.name
+              = address.city
+              = address.address_number
+            %li
+              = address.building
+            %li
+              = address.last_name
+              = address.first_name
+
+
       .buy-content__box__buy
         = form_tag(action: :pay, method: :post) do
           %button.buy-button{type:"submit"} 購入する

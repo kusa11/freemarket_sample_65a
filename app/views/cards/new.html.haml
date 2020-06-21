@@ -1,9 +1,9 @@
-.sell-header
-  =render 'products/login-header'
-  - breadcrumb :user_credit_edit
-  = render 'layouts/breadcrumbs'
-.card-wrapper
-  .content
+= render 'products/top-header'
+- breadcrumb :user_credit_edit
+= render 'layouts/breadcrumbs'
+.main
+  = render 'users/section/mypage-list'
+  .card-wrapper
     .card-info
       クレジットカード情報入力
     .form
@@ -71,5 +71,4 @@
             = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc"
           #card_token
           = submit_tag "追加する", id: "token_submit", class: "button"
-.sell-footer
-  =render 'products/login-footer'
+= render 'products/top-footer'
