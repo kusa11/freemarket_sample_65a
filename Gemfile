@@ -83,3 +83,4 @@ gem 'ancestry'
 gem "font-awesome-rails"
 gem 'payjp'
 gem 'gretel'
+gem 'mini_racer'
